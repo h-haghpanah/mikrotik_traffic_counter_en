@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <!-- Bootstrap and JQuery -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -43,9 +43,9 @@
     <div class="box1">
         <div class="sidenav">
             <div class="login-main-text">
-               <h2> مدیریت اینترنت میکروتیک</h2>
+               <h2>Mikrotik Traffic Counter</h2>
                <br>
-               <p>برای ورود ، نام کاربری و گذرواژه خود را وارد کنید</p>
+               <p>For login enter username and password.</p>
             </div>
          </div>
     </div>
@@ -55,14 +55,14 @@
                <div class="login-form">
                   <form action="{{url_for('login')}}" method="post">
                      <div class="form-group">
-                        <!-- <label>نام کاربری</label> -->
-                        <input type="text" name="username" class="form-control" placeholder="نام کاربری">
+                        <!-- <label>Username</label> -->
+                        <input type="text" name="username" class="form-control" placeholder="Username">
                      </div>
                      <div class="form-group">
-                        <!-- <label>گذرواژه</label> -->
-                        <input type="password" name="password" class="form-control" placeholder="گذرواژه">
+                        <!-- <label>Password</label> -->
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                      </div>
-                     <button type="submit" class="btn btn-black">ورود</button>
+                     <button type="submit" class="btn btn-black">Login</button>
                   </form>
                </div>
             </div>

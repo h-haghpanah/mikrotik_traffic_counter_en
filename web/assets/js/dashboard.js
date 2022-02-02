@@ -1,21 +1,26 @@
+
+
 $(document).ready(function(){
 
         // Persian Date Picker
-        $(".pdate").pDatepicker({
-            observer: true,
-            format: 'YYYY/MM/DD',
-            altField: '.observer-example-alt'
-        });
-        
+        // $(".pdate").pDatepicker({
+        //     observer: true,
+        //     format: 'YYYY/MM/DD',
+        //     altField: '.observer-example-alt'
+        // });
+        // $('.datepicker').datepicker({
+        //     dateFormat: 'yy-mm-dd'
+        // })
+        $('.wbn-datepicker').datepicker();
     
         var show = $('.show');
         $('#toggle').on('click', function() {
             $('#toggle').toggleClass("btn-dark btn-secondary")
             var temp = $('#toggle').html()
-            if (temp == "پنهان کردن"){
-                $('#toggle').html("تغییر بازه زمانی");
+            if (temp == "Hide"){
+                $('#toggle').html("Change Date Range");
             }else{
-            $('#toggle').html("پنهان کردن")
+            $('#toggle').html("Hide")
             }
             show.fadeToggle();  
         });
@@ -31,14 +36,14 @@ $(document).ready(function(){
             event.preventDefault()
         allData = allData + "&event=event"
             if(allData2[0].value  ==  allData2[1].value){
-                $("#title1").html("").append("  مصرف اینترنت  در تاریخ&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+                $("#title1").html("").append("Traffic usage in&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(Gigabyte)</span>')
             }else{
-                $("#title1").html("").append("مصرف اینترنت  از تاریخ&nbsp; " + allData2[0].value + ' تا تاریخ '+ allData2[1].value +' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+                $("#title1").html("").append("Traffic usage from&nbsp; " + allData2[0].value + ' to '+ allData2[1].value +' &nbsp; <span class="small">(Gigabyte)</span>')
             }
         }
         else{
             allData = allData + "&event=no_event"
-            $("#title1").html("").append("  مصرف اینترنت  در ماه جاری&nbsp;  <span class='small'>(دانلود  /  آپلود) گیگابایت</span>")
+            $("#title1").html("").append("  Traffic usage in current month&nbsp;  <span class='small'>(Gigabyte)</span>")
 
         }
         $.ajax({
@@ -50,7 +55,7 @@ $(document).ready(function(){
                 if( response[0].length > 0 )
                 {
                 for (var i in response[0]){
-                    content += "<tr class='shabnam'>\n"+
+                    content += "<tr>\n"+
                     "<td class='col-md-1 col-sm-1'>"+response[0][i].name+" </td>\n"+
                     "<td class='col-md-1 col-sm-1'>"+response[0][i].download+"</td>\n"+
                     "<td class='col-md-1 col-sm-1'>"+response[0][i].upload+"</td>\n"+
@@ -64,16 +69,6 @@ $(document).ready(function(){
                 destination_pie_chart(response[1])
                 top_ten_chart(response[2])
 
-                // if(event == "no_event"){
-                //     repeat_report = repeat_report + 1
-                // }
-                // if(event != "no_event" && repeat_report%2 == 0){
-                //     repeat_report = repeat_report + 1
-                //     document.getElementById("report_btn").click();
-                // }
-                // else{
-                //     repeat_report = repeat_report + 1
-                // }
             }
             }
         })
@@ -98,7 +93,6 @@ $(document).ready(function(){
                     chart: {
                     type: 'pie',
                     height: 350,
-                    fontFamily: 'shabnam'
                 },
                 fill: {
                     colors: colors
@@ -141,13 +135,13 @@ $(document).ready(function(){
                   
         var options = {
             series: [{
-            name:"مصرف (گیگابایت)",
+            name:"Usage (Gigabyte)",
             data: usage
           }],
             chart: {
             type: 'bar',
             height: 350,
-            fontFamily: 'shabnam'
+
           },
           plotOptions: {
             bar: {

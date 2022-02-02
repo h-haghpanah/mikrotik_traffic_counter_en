@@ -7,8 +7,8 @@
  *******************************************************************************/
 
 body {
-    direction: rtl;
-    text-align:right
+    direction: ltr;
+    text-align:left
 }
 
 dd {
@@ -20,11 +20,11 @@ figure {
 }
 
 caption {
-    text-align: right;
+    text-align: left;
 }
 
 th {
-    text-align: right;
+    text-align: left;
 }
 
 .list-unstyled {
@@ -1221,16 +1221,16 @@ body {
 }
 
 #wrapper.toggled {
-  padding-right: 250px;
+  padding-left: 250px;
 }
 
 #sidebar-wrapper {
   z-index: 1000;
   position: fixed;
-  right: 250px;
+  left: 250px;
   width: 0;
   height: 100%;
-  margin-right: -250px;
+  margin-left: -250px;
   overflow-y: auto;
   background: #000;
   -webkit-transition: all 0.5s ease;
@@ -1307,7 +1307,7 @@ body {
     padding-left: 0;
   }
   #wrapper.toggled {
-    padding-right: 250px;
+    padding-left: 250px;
   }
   #sidebar-wrapper {
     width: 0;

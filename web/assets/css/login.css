@@ -1,6 +1,6 @@
 body{
-    direction: rtl;
-    text-align: right;
+    direction: ltr;
+    text-align: left;
 }
 label{
     font-size: 15px;
@@ -74,7 +74,7 @@ input{
     width: 60vw;
     height: 100vh;
     background-color: rgb(255, 255, 255);
-    text-align: right;
+    text-align: left;
 }
 
 

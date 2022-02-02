@@ -135,15 +135,12 @@ def read_users_traffic():
     if request.method == "POST":
         event = request.form["event"]
         if event == "event":
-            date1 = request.form["pdate1"]
-            date2 = request.form["pdate2"]
+            date1 = request.form["date1"]
+            date2 = request.form["date2"]
         else:
             date2 = str(datetime.today().strftime('%Y-%m-%d'))
-            date1 = str(gregorian_to_jalali(date2))
-            date2 = str(gregorian_to_jalali(date2))
-            date2 = date2.replace("-","/")
-            date1 = date1.split("-")
-            date1 = str(date1[0]) + "/" + str(date1[1]) + "/" + "01"
+            temp =  date2.split("-")
+            date1 = str(temp[0]) + "-" + str(temp[1]) + "-" + "01"
         if session["role"] != "User":
             result = report.read_all_users_full_report(date1,date2,"all")
         else:

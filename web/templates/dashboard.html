@@ -2,8 +2,8 @@
 {% block content %}
 
 
-<div  style="text-align:center; margin-bottom: 20px;">
-  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">تغییر بازه زمانی</button>
+<div  style="text-align:center; margin-top: 50px;">
+  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">Change Date Range</button>
   <div class="show" style="display: none;">
     <form id="report" name="report" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
     
@@ -11,17 +11,17 @@
             <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text shabnam">از تاریخ</div>
+                  <div class="input-group-text shabnam">Start Date</div>
                 </div>
-                <input type="text" name="pdate1" id="pdate1"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+                <input type="date" name="date1" id="date1" class="form-control" required>
               </div>
             </div>
             <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6">
               <div class="input-group">
                 <div class="input-group-prepend">
-                  <div class="input-group-text shabnam">تا تاریخ</div>
+                  <div class="input-group-text shabnam">End Date</div>
                 </div>
-                <input type="text" name="pdate2"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+                <input type="date" name="date2" id="date2" class="form-control" required>
               </div>
             </div>
            
@@ -29,7 +29,7 @@
           <div class="col-12">
 
               <div  style="margin: 10px 5px;">
-                  <button type="submit" id="report_btn"  class="btn btn-dark btn-xs shabnam" dir="rtl">گزارش</button>
+                  <button type="submit" id="report_btn"  class="btn btn-dark btn-xs shabnam" dir="ltr">Report</button>
               </div>
               </div>
           </form>
@@ -39,17 +39,17 @@
 
 <div class="card" style="margin-top: 20px;">
   <div class="card-header">
-    <h1 class="shabnam center" id="title1" style="font-size: large !important;"></span></h1>
+    <h1 class="center" id="title1" style="font-size: large !important;"></span></h1>
   </div>
   <div class="card-body">
     <div class="rtl_class" style="overflow-x:auto;">
       <table class="table table-bordered table-striped">
         <thead>
             <tr class="shabnam">
-                <th>نام</th>
-                <th>دانلود</th>
-                <th>آپلود</th>
-                <th>مجموع</th>
+                <th>Name</th>
+                <th>Download</th>
+                <th>Upload</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody class="top_ten_users">
@@ -62,7 +62,7 @@
 <div class="row rtl">
   <div class="card col-lg-6 col-md-6 col-sm-12">
     <div class="card-header">
-      <h1 class="shabnam center" style="font-size: large !important;">مقصدها</h1>
+      <h1 class="shabnam center" style="font-size: large !important;">Destinations</h1>
     </div>
     <div class="card-body">
       <div id="destination_pie_chart"></div>
@@ -71,7 +71,7 @@
   
   <div class="card col-lg-6 col-md-6 col-sm-12">
     <div class="card-header">
-      <h1 class="shabnam center" style="font-size: large !important;">کاربران پر مصرف</h1>
+      <h1 class="shabnam center" style="font-size: large !important;">Top Users</h1>
     </div>
     <div class="card-body">
       <div id="top_ten_chart" style="direction: ltr;"></div>
@@ -84,4 +84,5 @@
 
 
   <script src="../assets/js/dashboard.js"></script>
+
 {% endblock %}

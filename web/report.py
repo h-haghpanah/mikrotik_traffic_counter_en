@@ -1,4 +1,5 @@
 import hashlib
+from django.db import DataError
 # from os import PRIO_USER
 from persiantools.jdatetime import JalaliDate
 from flask import session
@@ -342,7 +343,7 @@ def users_traffic_overview(date1,date2):
         results.append(temp)
     return results
 
-def read_user_full_report(pdate1,pdate2,user_id):
+def read_user_full_report(date1,date2,user_id):
     user=user_info(user_id)
     devices = devices_list(user_id)
     destination_traffic = []
@@ -350,8 +351,6 @@ def read_user_full_report(pdate1,pdate2,user_id):
     destinations = destinations_list()
     other = {'destination_name' : "دیگر"}
     destinations.append(other)
-    date1 = str(jalali_to_gregorian(pdate1))
-    date2 = str(jalali_to_gregorian(pdate2))
     for device in devices:
         for destination in destinations:
             traffic = traffic_by_user_device_destination(date1,date2,user_id,destination["destination_name"],device["device_id"],device["device_name"])
@@ -365,17 +364,17 @@ def read_user_full_report(pdate1,pdate2,user_id):
         destination_traffic = []
     return  device_traffics
     
-def read_all_users_full_report(pdate1,pdate2,user_id):
+def read_all_users_full_report(date1,date2,user_id):
     if user_id == "all":
         users = users_list()
         user_traffics = []
         for user in users:
-            traffic = read_user_full_report(pdate1,pdate2,str(user["user_id"]))
+            traffic = read_user_full_report(date1,date2,str(user["user_id"]))
             user_traffics.append(traffic)
         return user_traffics
     else:
         user_traffics = []
-        traffic = read_user_full_report(pdate1,pdate2,str(user_id))
+        traffic = read_user_full_report(date1,date2,str(user_id))
         user_traffics.append(traffic)
         return user_traffics
 
