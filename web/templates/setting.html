@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h5>مشخصات میکروتیک</h5>
+<form id="mikrotik" name="mikrotik" class="inline-form rtl_class form-row" style="justify-content: right; margin-top: 20px;">
+    <div class="col-lg-3 col-xl-3 col-sm-4 col-6 col-md-4">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text shabnam">آی پی</div>
+          </div>
+          <input type="text" id="mikrotik_ip"  name="ip" class="form-input form-control ip shabnam" placeholder="xxx.xxx.xxx.xxx" required disabled>
+        </div>
+      </div>
+
+      <div>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text shabnam">پرت</div>
+          </div>
+          <input name="port" id="mikrotik_port" type="number" min="1" max="65535" maxlength="5" required disabled>    
+        </div>
+      </div>
+
+      <div class="col">
+            <button type="submit" id="mikrotik_id" data="" class="btn btn-dark btn-xs shabnam modify_mikrotik" dir="rtl">ویرایش</button>
+      </div>
+</form>
+<br><br>
+<h5>شبکه های محلی</h5>
+
+
+<div  style="text-align:center; margin-bottom: 20px;">
+  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه شبکه محلی</button>
+  <div class="show" style="display: none;">
+    <form id="add_local_range" name="add_local_range" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+    
+            <div class="form-row form-inline">
+              <div class="col-2">
+                <div class="input-group">
+                  <input type="number" name="mask" class="form-input form-control mask shabnam editable" style="max-width: 100px;" min="1" max="32" maxlength="2" placeholder="نت مسک">
+                </div>
+              </div>
+              <span style="font-size: 25px;">/</span>
+        <div class="col">
+          <div class="input-group">
+            <input type="text" name="ip" class="form-input form-control ip shabnam" placeholder="xxx.xxx.xxx.xxx" required>
+          </div>
+        </div>
+
+
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+              </div>
+              </div>
+          </form>
+          </div>
+        </div>
+  </div>
+</div>
+<br><br>
+
+<div class="rtl_class" style="justify-content: right; margin-top: 20px;">
+  
+    <form>
+      <div style="margin: 0 4%" id="local_lan">
+    </form>
+  </div>
+</div>
+
+
+<script src="../assets/js/setting.js"></script>
+<link rel="stylesheet" href="../assets/css/setting.css">
+{% endblock %}

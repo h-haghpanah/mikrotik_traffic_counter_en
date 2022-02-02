@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <!-- Bootstrap and JQuery -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- End of Bootstrap and JQuery -->
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <!-- End Of Fonts -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/login.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="../assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <title>ورود</title>
+</head>
+<body>
+    <div class="flex">
+    <div class="box1">
+        <div class="sidenav">
+            <div class="login-main-text">
+               <h2> مدیریت اینترنت میکروتیک</h2>
+               <br>
+               <p>برای ورود ، نام کاربری و گذرواژه خود را وارد کنید</p>
+            </div>
+         </div>
+    </div>
+    <div class="box2"><h1>
+        <div class="main">
+            <div class="col-md-5 col-sm-8">
+               <div class="login-form">
+                  <form action="{{url_for('login')}}" method="post">
+                     <div class="form-group">
+                        <!-- <label>نام کاربری</label> -->
+                        <input type="text" name="username" class="form-control" placeholder="نام کاربری">
+                     </div>
+                     <div class="form-group">
+                        <!-- <label>گذرواژه</label> -->
+                        <input type="password" name="password" class="form-control" placeholder="گذرواژه">
+                     </div>
+                     <button type="submit" class="btn btn-black">ورود</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+    </h1></div>
+</div>
+
+</body>
+</html>

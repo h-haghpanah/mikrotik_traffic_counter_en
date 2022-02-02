@@ -1,0 +1,299 @@
+dns,packet --- got query from 172.16.1.115:53796:
+dns,packet id:e7a rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns query from 172.16.1.115: #16664 ssl.gstatic.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:bc38 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:bc38 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet answer:
+dns,packet <ssl.gstatic.com:A:67=216.58.210.35>
+dns done query: #16664 ssl.gstatic.com 216.58.210.35
+dns,packet --- sending reply to 172.16.1.115:53796:
+dns,packet id:e7a rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet answer:
+dns,packet <ssl.gstatic.com:A:67=216.58.210.35>
+dns,packet --- got query from 172.16.1.115:9090:
+dns,packet id:eb33 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: soft98.ir:A:IN
+dns query from 172.16.1.115: #16665 soft98.ir. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:f64e rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: soft98.ir:A:IN
+dns,packet --- got query from 172.16.1.115:53844:
+dns,packet id:3949 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: app.najva.com:A:IN
+dns query from 172.16.1.115: #16666 app.najva.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:a8a5 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: app.najva.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:f64e rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: soft98.ir:A:IN
+dns,packet answer:
+dns,packet <soft98.ir:A:6308=79.127.127.35>
+dns done query: #16665 soft98.ir 79.127.127.35
+dns,packet --- sending reply to 172.16.1.115:9090:
+dns,packet id:eb33 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: soft98.ir:A:IN
+dns,packet answer:
+dns,packet <soft98.ir:A:6308=79.127.127.35>
+dns,packet --- got query from 172.16.1.115:24504:
+dns,packet id:4fe6 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: beta.kaprila.com:A:IN
+dns query from 172.16.1.115: #16667 beta.kaprila.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:3de8 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: beta.kaprila.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:a8a5 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: app.najva.com:A:IN
+dns,packet answer:
+dns,packet <app.najva.com:A:92=104.18.54.79>
+dns,packet <app.najva.com:A:92=172.67.142.224>
+dns,packet <app.najva.com:A:92=104.18.55.79>
+dns done query: #16666 app.najva.com 104.18.54.79
+dns,packet --- sending reply to 172.16.1.115:53844:
+dns,packet id:3949 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: app.najva.com:A:IN
+dns,packet answer:
+dns,packet <app.najva.com:A:92=104.18.54.79>
+dns,packet <app.najva.com:A:92=172.67.142.224>
+dns,packet <app.najva.com:A:92=104.18.55.79>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:3de8 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: beta.kaprila.com:A:IN
+dns,packet answer:
+dns,packet <beta.kaprila.com:A:300=88.135.37.4>
+dns done query: #16667 beta.kaprila.com 88.135.37.4
+dns,packet --- sending reply to 172.16.1.115:24504:
+dns,packet id:4fe6 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: beta.kaprila.com:A:IN
+dns,packet answer:
+dns,packet <beta.kaprila.com:A:300=88.135.37.4>
+dns,packet --- got query from 172.16.1.115:58698:
+dns,packet id:40a4 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.soft98.ir:A:IN
+dns query from 172.16.1.115: #16668 cdn.soft98.ir. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:7cbc rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.soft98.ir:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:7cbc rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.soft98.ir:A:IN
+dns,packet answer:
+dns,packet <cdn.soft98.ir:A:12922=185.112.33.122>
+dns done query: #16668 cdn.soft98.ir 185.112.33.122
+dns,packet --- sending reply to 172.16.1.115:58698:
+dns,packet id:40a4 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.soft98.ir:A:IN
+dns,packet answer:
+dns,packet --- got query from 172.16.1.115:6311:
+dns,packet id:b1 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns query from 172.16.1.115: #16669 www.google-analytics.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:eda0 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet --- got query from 172.16.1.115:49357:
+dns,packet id:a302 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.yektanet.com:A:IN
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:fb96 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.yektanet.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:fb96 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <cdn.yektanet.com:A:299=104.31.76.193>
+dns,packet <cdn.yektanet.com:A:299=104.31.77.193>
+dns,packet <cdn.yektanet.com:A:299=172.67.174.163>
+dns done query: #16670 cdn.yektanet.com 104.31.76.193
+dns,packet --- sending reply to 172.16.1.115:49357:
+dns,packet id:a302 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <cdn.yektanet.com:A:299=104.31.76.193>
+dns,packet <cdn.yektanet.com:A:299=104.31.77.193>
+dns,packet <cdn.yektanet.com:A:299=172.67.174.163>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:eda0 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <www.google-analytics.com:CNAME:86236=www-google-analytics.l.google.com>
+dns,packet <www-google-analytics.l.google.com:A:136=216.58.204.14>
+dns done query: #16669 www.google-analytics.com 216.58.204.14
+dns,packet --- sending reply to 172.16.1.115:6311:
+dns,packet id:b1 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <www.google-analytics.com:CNAME:86236=www-google-analytics.l.google.com>
+dns,packet <www-google-analytics.l.google.com:A:136=216.58.204.14>
+dns,packet --- got query from 172.16.1.115:14080:
+dns,packet id:d0e1 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.kaprila.com:A:IN
+dns query from 172.16.1.115: #16671 cdn.kaprila.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:649 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.kaprila.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:649 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.kaprila.com:A:IN
+dns,packet answer:
+dns,packet <cdn.kaprila.com:A:126=88.135.37.4>
+dns done query: #16671 cdn.kaprila.com 88.135.37.4
+dns,packet --- sending reply to 172.16.1.115:14080:
+dns,packet id:d0e1 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.kaprila.com:A:IN
+dns,packet answer:
+dns,packet <cdn.kaprila.com:A:126=88.135.37.4>
+dns,packet --- got query from 172.16.1.115:17129:
+dns,packet id:5e19 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns query from 172.16.1.115: #16672 stats.g.doubleclick.net. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:f0be rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:f0be rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet answer:
+dns,packet <stats.g.doubleclick.net:CNAME:86285=stats.l.doubleclick.net>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.155>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.154>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.156>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.157>
+dns done query: #16672 stats.g.doubleclick.net 108.177.96.155
+dns,packet --- sending reply to 172.16.1.115:17129:
+dns,packet id:5e19 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet answer:
+dns,packet <stats.g.doubleclick.net:CNAME:86285=stats.l.doubleclick.net>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.155>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.154>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.156>
+dns,packet <stats.l.doubleclick.net:A:185=108.177.96.157>
+dns,packet --- got query from 172.16.1.115:44171:
+dns,packet id:5c01 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.google-analytics.com:A:IN
+dns query from 172.16.1.115: #16673 ssl.google-analytics.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:7036 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.google-analytics.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:7036 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <ssl.google-analytics.com:CNAME:86223=ssl-google-analytics.l.google.com>
+dns,packet <ssl-google-analytics.l.google.com:A:123=216.58.212.232>
+dns done query: #16673 ssl.google-analytics.com 216.58.212.232
+dns,packet --- sending reply to 172.16.1.115:44171:
+dns,packet id:5c01 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <ssl.google-analytics.com:CNAME:86223=ssl-google-analytics.l.google.com>
+dns,packet <ssl-google-analytics.l.google.com:A:123=216.58.212.232>
+dns,packet --- got query from 172.16.1.115:24058:
+dns,packet id:797c rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: nfetch.yektanet.com:A:IN
+dns query from 172.16.1.115: #16674 nfetch.yektanet.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:77cb rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: nfetch.yektanet.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:77cb rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: nfetch.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <nfetch.yektanet.com:A:300=104.31.77.193>
+dns,packet <nfetch.yektanet.com:A:300=104.31.76.193>
+dns,packet <nfetch.yektanet.com:A:300=172.67.174.163>
+dns done query: #16674 nfetch.yektanet.com 104.31.77.193
+dns,packet --- sending reply to 172.16.1.115:24058:
+dns,packet id:797c rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: nfetch.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <nfetch.yektanet.com:A:300=104.31.77.193>
+dns,packet <nfetch.yektanet.com:A:300=104.31.76.193>
+dns,packet <nfetch.yektanet.com:A:300=172.67.174.163>
+dns,packet --- got query from 172.16.1.115:37139:
+dns,packet id:6811 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: native.yektanet.com:A:IN
+dns query from 172.16.1.115: #16675 native.yektanet.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:bc0e rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: native.yektanet.com:A:IN
+dns,packet --- got query from 172.16.1.115:64303:
+dns,packet id:7d7 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google.co.uk:A:IN
+dns query from 172.16.1.115: #16676 www.google.co.uk. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:1c19 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google.co.uk:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:bc0e rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: native.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <native.yektanet.com:A:56=104.31.77.193>
+dns,packet <native.yektanet.com:A:56=172.67.174.163>
+dns,packet <native.yektanet.com:A:56=104.31.76.193>
+dns done query: #16675 native.yektanet.com 104.31.77.193
+dns,packet --- sending reply to 172.16.1.115:37139:
+dns,packet id:6811 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: native.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <native.yektanet.com:A:56=104.31.77.193>
+dns,packet <native.yektanet.com:A:56=172.67.174.163>
+dns,packet <native.yektanet.com:A:56=104.31.76.193>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:1c19 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google.co.uk:A:IN
+dns,packet answer:
+dns,packet <www.google.co.uk:A:101=216.58.210.35>
+dns done query: #16676 www.google.co.uk 216.58.210.35
+dns,packet --- sending reply to 172.16.1.115:64303:
+dns,packet id:7d7 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google.co.uk:A:IN
+dns,packet answer:
+dns,packet <www.google.co.uk:A:101=216.58.210.35>
+dns,packet --- got query from 172.16.1.115:52481:
+dns,packet id:1563 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ua.yektanet.com:A:IN
+dns query from 172.16.1.115: #16677 ua.yektanet.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:c263 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ua.yektanet.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:c263 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ua.yektanet.com:A:IN
+dns,packet answer:
+dns,packet <ua.yektanet.com:A:287=172.67.174.163>
+dns,packet <ua.yektanet.com:A:287=104.31.77.193>
+dns,packet <ua.yektanet.com:A:287=104.31.76.193>
+dns done query: #16677 ua.yektanet.com 172.67.174.163
+dns,packet --- sending reply to 172.16.1.115:52481:
+dns,packet id:1563 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet --- got query from 172.16.1.115:39007:
+dns,packet id:dfc9 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: soft98.najva.com:A:IN
+dns query from 172.16.1.115: #16678 soft98.najva.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:e532 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: soft98.najva.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:e532 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: soft98.najva.com:A:IN
+dns,packet answer:
+dns,packet <soft98.najva.com:A:300=172.67.142.224>
+dns,packet <soft98.najva.com:A:300=104.18.55.79>
+dns,packet <soft98.najva.com:A:300=104.18.54.79>
+dns done query: #16678 soft98.najva.com 172.67.142.224
+dns,packet --- sending reply to 172.16.1.115:39007:
+dns,packet id:dfc9 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: soft98.najva.com:A:IN
+dns,packet answer:
+dns,packet <soft98.najva.com:A:300=172.67.142.224>
+dns,packet <soft98.najva.com:A:300=104.18.55.79>
+dns,packet <soft98.najva.com:A:300=104.18.54.79>

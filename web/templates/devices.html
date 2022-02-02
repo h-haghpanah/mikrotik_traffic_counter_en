@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div  style="text-align:center; margin-bottom: 20px;">
+  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه کردن دستگاه</button>
+  <div class="show" style="display: none;">
+    <form id="add_device" name="add_device" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+    
+            <div class="form-row">
+            <div class="col-lg-2 col-xl-2 col-sm-12 col-md-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نام</div>
+                </div>
+                <input type="text" name="dname"  class="form-control dname shabnam" placeholder="نام" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-sm-12 col-md-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">مدل</div>
+                </div>
+                <input type="text" name="model"  class="form-control lname shabnam" placeholder="مدل" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-2 col-xl-2 col-sm-12 col-md-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نوع</div>
+                </div>
+                <select id="type" name="type" class="form-control shabnam gname" required>
+                    
+                </select>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text shabnam">کاربر</div>
+              </div>
+              <select id="user" name="user" class="form-control shabnam gname" required>
+                  
+              </select>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text shabnam">آی پی</div>
+            </div>
+            <input type="text" id="ipv4" name="ip" class="form-input form-control ip shabnam" placeholder="xxx.xxx.xxx.xxx" required>
+          </div>
+        </div>
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+              </div>
+              </div>
+          </form>
+  </div>
+</div>
+<br><br>
+<div  style="text-align:center; margin-bottom: 20px;">
+  <button id="toggle2" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">نمایش دستگاه ها</button>
+  <div class="show2" style="display: none;">
+    <form id="show_devices" name="show_devices" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+  
+          <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text shabnam">کاربر</div>
+              </div>
+              <select id="users_list" name="user" class="form-control shabnam gname" required>
+                  
+              </select>
+          </div>
+        </div>
+
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">نمایش</button>
+              </div>
+              </div>
+          </form>
+  </div>
+</div>
+
+
+<div class="rtl_class" style="overflow-x:auto;">
+    <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr class="shabnam table-header">
+
+        </tr>
+    </thead>
+    <tbody class="devices-table">
+  
+    </tbody>
+  </table>
+  </div>
+
+
+  <script src="../assets/js/devices.js"></script>
+  <link rel="stylesheet" href="../assets/css/devices.css">
+{% endblock %}

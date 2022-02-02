@@ -1,0 +1,35 @@
+/* .btn-success {
+    background-color: black;
+    border-color: gray;
+    box-shadow: 0 0 0 .2rem rgba(133, 133, 133, 0.3);
+}
+
+.btn-success.focus, .btn-success:focus{
+    box-shadow: 0 0 0 .2rem rgba(133, 133, 133, 0.3);
+}
+
+
+.btn-success:hover {
+    background-color: black;
+    border-color: gray;
+    color: white;
+}
+
+
+.btn-warning {
+    background-color: gray;
+    border-color: black;
+    box-shadow: 0 0 0 .2rem rgba(133, 133, 133, 0.3);
+    color: white;
+}
+
+.btn-warning.focus, .btn-warning:focus {
+    box-shadow: 0 0 0 .2rem rgba(133, 133, 133, 0.3);
+}
+
+.btn-warning:hover {
+    background-color: rgb(202, 202, 202);
+    border-color: black;
+}
+
+.hidetext { -webkit-text-security: disc; } */

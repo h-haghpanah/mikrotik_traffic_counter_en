@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div  style="text-align:center; margin-bottom: 20px;">
+  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">گزارش مصرف</button>
+  <div class="show" style="display: none;">
+    <form id="report" name="report" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+    
+            <div class="form-row">
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">از تاریخ</div>
+                </div>
+                <input type="text" name="pdate1"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">تا تاریخ</div>
+                </div>
+                <input type="text" name="pdate2"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+              </div>
+            </div>
+
+              <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">کاربر</div>
+                </div>
+                <select id="company" name="id" class="form-control shabnam" required>
+                    
+                </select>
+            </div>
+          </div>
+
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit" id="report_btn"  class="btn btn-dark btn-xs shabnam" dir="rtl">گزارش</button>
+              </div>
+              </div>
+          </form>
+  </div>
+</div>
+
+<div class="card col-lg-12 col-md-12 col-sm-12" style="margin-top: 20px;">
+  <div class="card-header">
+    <h1 class="shabnam center" id="title1" style="font-size: large !important;"></span></h1>
+  </div>
+  <div class="card-body">
+
+    <div class="rtl_class" style="overflow-x:auto;">
+      <br>
+    
+    <table class="table table-bordered table-striped">
+      <thead>
+          <tr class="shabnam table-header">
+          
+          </tr>
+      </thead>
+      <tbody class="report_table">
+    
+      </tbody>
+    </table>
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+  <!-- Charts -->
+
+  <div class="row rtl">
+    <div class="card col-lg-6 col-md-6 col-sm-12">
+      <div class="card-header">
+        <h1 class="shabnam center" style="font-size: large !important;">مقصدها</h1>
+      </div>
+      <div class="card-body">
+        <div id="destination_pie_chart"></div>
+      </div>
+    </div>
+
+      <div class="card col-lg-6 col-md-6 col-sm-12">
+        <div class="card-header">
+          <h1 class="shabnam center" style="font-size: large !important;">دستگاه ها</h1>
+        </div>
+        <div class="card-body">
+          <div id="devices_pie_chart"></div>
+        </div>
+      </div>
+    
+  </div>
+
+
+  <script src="../assets/js/report.js"></script>
+  <link rel="stylesheet" href="..//assets/css/report.css">
+{% endblock %}

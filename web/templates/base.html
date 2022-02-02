@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <link rel="shortcut icon" href="../assets/images/favicon/favicon.ico">
+    <!-- Bootstrap and JQuery -->
+    <!-- <script src="../assets/js/jquery.min.js"></script> -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/bootstrap-colorpicker.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="../assets/js/bootstrap-colorpicker.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script type='text/javascript' src="../assets/js/jquery.inputmask.bundle.js"></script>
+    <script src="../assets/js/base.js"></script>
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <!-- End Of Bootstrap and JQuery -->
+        <!-- Sweet Alert -->
+        <script src="../assets/js/sweetalert2.all.min.js"></script>
+        <link rel='stylesheet' href='../assets/css/sweetalert2.min.css'>
+        <!-- Persian Date Picker -->
+        <link rel="stylesheet" href="../assets/css/persian-datepicker.css"/>
+        <script src="../assets/js/persian-date.js"></script>
+        <script src="../assets/js/persian-datepicker.js"></script>
+    <!-- Chaets -->
+    <script src="../assets/js/core.js"></script>
+    <script src="../assets/js/charts.js"></script>
+    <script src="../assets/js/animated.js"></script>
+    <script src="../assets/js/apexcharts.js"></script>
+    <link rel="stylesheet" href="../assets/css/apexcharts.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدیریت اینترنت در میکروتیک</title>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary" style="background-color: #313131 !important;"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav mr-auto">
+                <!-- <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> </li> -->
+                <!-- <li class="nav-item"> <a class="nav-link" href="#">Link</a> </li> -->
+            </ul>
+            <form class="form-inline my-2 my-md-0"> </form>
+        </div>
+    </nav>
+
+    <div id="wrapper" class="toggled">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="#" style="font-weight: 800; color: #fff;"> مدیریت اینترنت در میکروتیک</a> </li>
+                {% if session["role"] == "Admin" %}
+                <li> <a href="{{url_for('dashboard')}}">داشبرد</a> </li>
+                <li> <a href="{{url_for('reporting')}}">گزارش</a> </li>
+                <li> <a href="{{url_for('users')}}">کاربران و گروه ها</a> </li>
+                <li> <a href="{{url_for('devices')}}">دستگاه ها</a> </li>
+                <li> <a href="{{url_for('destinations')}}">مقصد ها</a> </li>
+                <li> <a href="{{url_for('setting')}}">تنظیمات</a> </li>
+                <li> <a href="{{url_for('logout')}}">خروج</a> </li>
+                {% endif %}
+                {% if session["role"] == "User" %}
+                <li> <a href="{{url_for('self_report')}}">داشبرد</a> </li>
+                <li> <a href="{{url_for('logout')}}">خروج</a> </li>
+                {% endif %}
+                {% if session["role"] == "Reporter" %}
+                <li> <a href="{{url_for('dashboard')}}">داشبرد</a> </li>
+                <li> <a href="{{url_for('reporting')}}">گزارش</a> </li>
+                <li> <a href="{{url_for('logout')}}">خروج</a> </li>
+                {% endif %}
+            </ul>
+        </div> <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                {% block content %}
+
+                {% endblock %}
+            </div>
+        </div> <!-- /#page-content-wrapper -->
+    </div> <!-- /#wrapper -->
+    
+        
+
+
+
+<div class="modal"><!-- Place at bottom of page --></div>
+</body>
+ <!-- Menu Toggle Script -->
+<script>
+  $(function(){
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+
+    $(window).resize(function(e) {
+      if($(window).width()<=768){
+        $("#wrapper").removeClass("toggled");
+      }else{
+        $("#wrapper").addClass("toggled");
+      }
+    });
+  });
+   
+</script>
+<link rel="stylesheet" href="../assets/css/base.css">
+</html>

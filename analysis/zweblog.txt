@@ -1,0 +1,390 @@
+dns,packet --- got query from 172.16.1.115:60247:
+dns,packet id:fce6 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google.com:A:IN
+dns query from 172.16.1.115: #16691 www.google.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:5ab2 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:5ab2 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google.com:A:IN
+dns,packet answer:
+dns,packet <www.google.com:A:185=172.217.19.196>
+dns done query: #16691 www.google.com 172.217.19.196
+dns,packet --- sending reply to 172.16.1.115:60247:
+dns,packet id:fce6 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google.com:A:IN
+dns,packet answer:
+dns,packet --- got query from 172.16.1.115:39203:
+dns,packet id:3968 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: encrypted-tbn0.gstatic.com:A:IN
+dns query from 172.16.1.115: #16692 encrypted-tbn0.gstatic.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:a232 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: encrypted-tbn0.gstatic.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:a232 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: encrypted-tbn0.gstatic.com:A:IN
+dns,packet answer:
+dns,packet <encrypted-tbn0.gstatic.com:A:157=216.58.204.78>
+dns done query: #16692 encrypted-tbn0.gstatic.com 216.58.204.78
+dns,packet --- sending reply to 172.16.1.115:39203:
+dns,packet id:3968 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: encrypted-tbn0.gstatic.com:A:IN
+dns,packet answer:
+dns,packet <encrypted-tbn0.gstatic.com:A:157=216.58.204.78>
+dns,packet --- got query from 172.16.1.115:21123:
+dns,packet id:a004 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns query from 172.16.1.115: #16693 ssl.gstatic.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:f05d rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:f05d rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet answer:
+dns,packet <ssl.gstatic.com:A:152=216.58.210.35>
+dns done query: #16693 ssl.gstatic.com 216.58.210.35
+dns,packet --- sending reply to 172.16.1.115:21123:
+dns,packet id:a004 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: ssl.gstatic.com:A:IN
+dns,packet answer:
+dns,packet --- got query from 172.16.1.115:49753:
+dns,packet id:9a88 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: asimov.vortex.data.trafficmanager.net:A:IN
+dns query from 172.16.1.115: #16694 asimov.vortex.data.trafficmanager.net. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:e343 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: asimov.vortex.data.trafficmanager.net:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:e343 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: asimov.vortex.data.trafficmanager.net:A:IN
+dns,packet answer:
+dns,packet <asimov.vortex.data.trafficmanager.net:A:39=40.77.226.250>
+dns done query: #16694 asimov.vortex.data.trafficmanager.net 40.77.226.250
+dns,packet --- sending reply to 172.16.1.115:49753:
+dns,packet id:9a88 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: asimov.vortex.data.trafficmanager.net:A:IN
+dns,packet answer:
+dns,packet --- got query from 172.16.1.115:45490:
+dns,packet id:9bf7 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: downloadha.com:A:IN
+dns query from 172.16.1.115: #16695 downloadha.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:8beb rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: downloadha.com:A:IN
+dns,packet --- got query from 172.16.1.115:35950:
+dns,packet id:6b41 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: safebrowsing.google.com:A:IN
+dns query from 172.16.1.115: #16696 safebrowsing.google.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:50e rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: safebrowsing.google.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:8beb rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: downloadha.com:A:IN
+dns,packet answer:
+dns,packet <downloadha.com:A:8557=79.127.127.25>
+dns done query: #16695 downloadha.com 79.127.127.25
+dns,packet --- sending reply to 172.16.1.115:45490:
+dns,packet id:9bf7 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: downloadha.com:A:IN
+dns,packet answer:
+dns,packet <downloadha.com:A:8557=79.127.127.25>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:50e rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: safebrowsing.google.com:A:IN
+dns,packet answer:
+dns,packet <safebrowsing.google.com:CNAME:604527=sb.l.google.com>
+dns,packet <sb.l.google.com:A:27=172.217.169.14>
+dns done query: #16696 safebrowsing.google.com 172.217.169.14
+dns,packet --- sending reply to 172.16.1.115:35950:
+dns,packet id:6b41 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: safebrowsing.google.com:A:IN
+dns,packet answer:
+dns,packet <safebrowsing.google.com:CNAME:604527=sb.l.google.com>
+dns,packet <sb.l.google.com:A:27=172.217.169.14>
+dns,packet --- got query from 172.16.1.115:34895:
+dns,packet id:eb38 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.downloadha.com:A:IN
+dns query from 172.16.1.115: #16697 www.downloadha.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:abde rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.downloadha.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:abde rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <www.downloadha.com:CNAME:9180=downloadha.com>
+dns,packet <downloadha.com:A:9180=79.127.127.25>
+dns done query: #16697 www.downloadha.com 79.127.127.25
+dns,packet --- sending reply to 172.16.1.115:34895:
+dns,packet id:eb38 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <www.downloadha.com:CNAME:9180=downloadha.com>
+dns,packet <downloadha.com:A:9180=79.127.127.25>
+dns,packet --- got query from 172.16.1.115:5784:
+dns,packet id:4dba rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.ampproject.org:A:IN
+dns query from 172.16.1.115: #16698 cdn.ampproject.org. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:4823 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: cdn.ampproject.org:A:IN
+dns,packet --- got query from 172.16.1.115:15787:
+dns,packet id:badc rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: clients4.google.com:A:IN
+dns query from 172.16.1.115: #16699 clients4.google.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:fb5d rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: clients4.google.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:4823 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.ampproject.org:A:IN
+dns,packet answer:
+dns,packet <cdn.ampproject.org:CNAME:179=cdn-content.ampproject.org>
+dns,packet <cdn-content.ampproject.org:A:179=216.58.205.33>
+dns done query: #16698 cdn.ampproject.org 216.58.205.33
+dns,packet --- sending reply to 172.16.1.115:5784:
+dns,packet id:4dba rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: cdn.ampproject.org:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:fb5d rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: clients4.google.com:A:IN
+dns,packet answer:
+dns,packet <clients4.google.com:CNAME:39=clients.l.google.com>
+dns,packet <clients.l.google.com:A:39=216.58.206.110>
+dns done query: #16699 clients4.google.com 216.58.206.110
+dns,packet --- sending reply to 172.16.1.115:15787:
+dns,packet id:badc rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: clients4.google.com:A:IN
+dns,packet answer:
+dns,packet <clients4.google.com:CNAME:39=clients.l.google.com>
+dns,packet <clients.l.google.com:A:39=216.58.206.110>
+dns,packet --- got query from 172.16.1.115:35950:
+dns,packet id:d3f6 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: popupaval.ir:A:IN
+dns query from 172.16.1.115: #16700 popupaval.ir. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:5483 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: popupaval.ir:A:IN
+dns,packet --- got query from 172.16.1.115:6219:
+dns,packet id:b608 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: img5.downloadha.com:A:IN
+dns query from 172.16.1.115: #16701 img5.downloadha.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:860b rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: img5.downloadha.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:5483 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: popupaval.ir:A:IN
+dns,packet answer:
+dns,packet <popupaval.ir:A:3345=188.0.241.94>
+dns done query: #16700 popupaval.ir 188.0.241.94
+dns,packet --- sending reply to 172.16.1.115:35950:
+dns,packet id:d3f6 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: popupaval.ir:A:IN
+dns,packet answer:
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:860b rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: img5.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <img5.downloadha.com:A:9886=212.33.193.70>
+dns,packet <img5.downloadha.com:A:9886=79.127.127.17>
+dns done query: #16701 img5.downloadha.com 212.33.193.70
+dns,packet --- sending reply to 172.16.1.115:6219:
+dns,packet id:b608 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: img5.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <img5.downloadha.com:A:9886=212.33.193.70>
+dns,packet <img5.downloadha.com:A:9886=79.127.127.17>
+dns,packet --- got query from 172.16.1.115:29285:
+dns,packet id:9590 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: feed.downloadha.com:A:IN
+dns query from 172.16.1.115: #16702 feed.downloadha.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:7819 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: feed.downloadha.com:A:IN
+dns,packet --- got query from 172.16.1.115:57261:
+dns,packet id:f0d6 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: forum.downloadha.com:A:IN
+dns query from 172.16.1.115: #16703 forum.downloadha.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:4223 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: forum.downloadha.com:A:IN
+dns,packet --- got query from 172.16.1.115:43907:
+dns,packet id:d33d rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: plus.google.com:A:IN
+dns query from 172.16.1.115: #16704 plus.google.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:81a2 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: plus.google.com:A:IN
+dns,packet --- got query from 172.16.1.115:55876:
+dns,packet id:5159 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: s1.mediaad.org:A:IN
+dns query from 172.16.1.115: #16705 s1.mediaad.org. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:7e62 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: s1.mediaad.org:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:81a2 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: plus.google.com:A:IN
+dns,packet answer:
+dns,packet <plus.google.com:A:22=216.58.210.238>
+dns done query: #16704 plus.google.com 216.58.210.238
+dns,packet --- sending reply to 172.16.1.115:43907:
+dns,packet id:d33d rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: plus.google.com:A:IN
+dns,packet answer:
+dns,packet <plus.google.com:A:22=216.58.210.238>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:4223 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: forum.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <forum.downloadha.com:A:9316=79.127.127.25>
+dns done query: #16703 forum.downloadha.com 79.127.127.25
+dns,packet --- sending reply to 172.16.1.115:57261:
+dns,packet id:f0d6 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: forum.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <forum.downloadha.com:A:9316=79.127.127.25>
+dns,packet --- got query from 172.16.1.115:62981:
+dns,packet id:7f38 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.facebook.com:A:IN
+dns query from 172.16.1.115: #16706 www.facebook.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:32e2 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.facebook.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:7819 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: feed.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <feed.downloadha.com:CNAME:14400=g55hjv.feedproxy.ghs.google.com>
+dns,packet <g55hjv.feedproxy.ghs.google.com:A:300=216.58.206.115>
+dns done query: #16702 feed.downloadha.com 216.58.206.115
+dns,packet --- sending reply to 172.16.1.115:29285:
+dns,packet id:9590 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: feed.downloadha.com:A:IN
+dns,packet answer:
+dns,packet <feed.downloadha.com:CNAME:14400=g55hjv.feedproxy.ghs.google.com>
+dns,packet <g55hjv.feedproxy.ghs.google.com:A:300=216.58.206.115>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:7e62 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: s1.mediaad.org:A:IN
+dns,packet answer:
+dns,packet <s1.mediaad.org:A:133=172.64.104.23>
+dns,packet <s1.mediaad.org:A:133=172.64.105.23>
+dns done query: #16705 s1.mediaad.org 172.64.104.23
+dns,packet --- sending reply to 172.16.1.115:55876:
+dns,packet id:5159 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: s1.mediaad.org:A:IN
+dns,packet answer:
+dns,packet <s1.mediaad.org:A:133=172.64.104.23>
+dns,packet <s1.mediaad.org:A:133=172.64.105.23>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:32e2 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.facebook.com:A:IN
+dns,packet answer:
+dns,packet <www.facebook.com:CNAME:3585=star-mini.c10r.facebook.com>
+dns,packet <star-mini.c10r.facebook.com:A:45=157.240.221.35>
+dns done query: #16706 www.facebook.com 157.240.221.35
+dns,packet --- sending reply to 172.16.1.115:62981:
+dns,packet id:7f38 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.facebook.com:A:IN
+dns,packet answer:
+dns,packet <www.facebook.com:CNAME:3585=star-mini.c10r.facebook.com>
+dns,packet <star-mini.c10r.facebook.com:A:45=157.240.221.35>
+dns,packet --- got query from 172.16.1.115:62564:
+dns,packet id:5960 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: content-autofill.googleapis.com:A:IN
+dns query from 172.16.1.115: #16707 content-autofill.googleapis.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:f1d8 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: content-autofill.googleapis.com:A:IN
+dns,packet --- got query from 172.16.1.115:34837:
+dns,packet id:5c51 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns query from 172.16.1.115: #16708 www.google-analytics.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:f62d rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:f1d8 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: content-autofill.googleapis.com:A:IN
+dns,packet answer:
+dns,packet <content-autofill.googleapis.com:A:285=172.217.18.202>
+dns done query: #16707 content-autofill.googleapis.com 172.217.18.202
+dns,packet --- sending reply to 172.16.1.115:62564:
+dns,packet id:5960 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: content-autofill.googleapis.com:A:IN
+dns,packet answer:
+dns,packet <content-autofill.googleapis.com:A:285=172.217.18.202>
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:f62d rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <www.google-analytics.com:CNAME:86335=www-google-analytics.l.google.com>
+dns,packet <www-google-analytics.l.google.com:A:235=216.58.204.14>
+dns done query: #16708 www.google-analytics.com 216.58.204.14
+dns,packet --- sending reply to 172.16.1.115:34837:
+dns,packet id:5c51 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: www.google-analytics.com:A:IN
+dns,packet answer:
+dns,packet <www.google-analytics.com:CNAME:86335=www-google-analytics.l.google.com>
+dns,packet <www-google-analytics.l.google.com:A:235=216.58.204.14>
+dns,packet --- got query from 172.16.1.115:37766:
+dns,packet id:a7e5 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: api.mediaad.org:A:IN
+dns query from 172.16.1.115: #16709 www.google.com. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:eef0 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: api.mediaad.org:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:eef0 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: api.mediaad.org:A:IN
+dns,packet answer:
+dns,packet <api.mediaad.org:CNAME:107=hz.mediaad.org>
+dns,packet <hz.mediaad.org:A:107=45.94.254.12>
+dns,packet <hz.mediaad.org:A:107=45.94.255.23>
+dns done query: #16709 api.mediaad.org 45.94.254.12
+dns,packet --- sending reply to 172.16.1.115:37766:
+dns,packet id:a7e5 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: api.mediaad.org:A:IN
+dns,packet answer:
+dns,packet <api.mediaad.org:CNAME:107=hz.mediaad.org>
+dns,packet <hz.mediaad.org:A:107=45.94.254.12>
+dns,packet <hz.mediaad.org:A:107=45.94.255.23>
+dns,packet --- got query from 172.16.1.115:42278:
+dns,packet id:93e7 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns query from 172.16.1.115: #16710 stats.g.doubleclick.net. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:df1 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet --- got answer from 1.1.1.1:53:
+dns,packet id:df1 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet answer:
+dns,packet <stats.g.doubleclick.net:CNAME:86308=stats.l.doubleclick.net>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.155>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.157>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.156>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.154>
+dns done query: #16710 stats.g.doubleclick.net 66.102.1.155
+dns,packet --- sending reply to 172.16.1.115:42278:
+dns,packet id:93e7 rd:1 tc:0 aa:0 qr:1 ra:1 QUERY 'no error'
+dns,packet question: stats.g.doubleclick.net:A:IN
+dns,packet answer:
+dns,packet <stats.g.doubleclick.net:CNAME:86308=stats.l.doubleclick.net>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.155>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.157>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.156>
+dns,packet <stats.l.doubleclick.net:A:208=66.102.1.154>
+dns,packet --- got query from 172.16.1.115:45043:
+dns,packet id:9fda rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: mediacdn.mediaad.org:A:IN
+dns query from 172.16.1.115: #16711 mediacdn.mediaad.org. A
+dns,packet --- sending udp query to 1.1.1.1:53:
+dns,packet id:b890 rd:1 tc:0 aa:0 qr:0 ra:0 QUERY 'no error'
+dns,packet question: mediacdn.mediaad.org:A:I

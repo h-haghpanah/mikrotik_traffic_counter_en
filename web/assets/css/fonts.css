@@ -1,0 +1,14 @@
+@font-face {
+  font-family: shabnam;
+  src: url(../fonts/Shabnam-FD.ttf);
+}
+
+.shabnam {
+    font-family: "shabnam","Lato", sans-serif;
+    font-size: 15px !important;
+}
+
+body{
+  font-family: "shabnam";
+  font-size: 15px !important;
+}

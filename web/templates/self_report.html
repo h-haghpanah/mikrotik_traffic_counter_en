@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+<input type="hidden" id="fname" data="{{session['name']}}">
+<input type="hidden" id="lname" data="{{session['lastname']}}">
+
+
+<div  style="text-align:center; margin-bottom: 20px;">
+    <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">گزارش مصرف</button>
+    <div class="show" style="display: none;">
+      <form id="report" name="report" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+      
+              <div class="form-row">
+              <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text shabnam">از تاریخ</div>
+                  </div>
+                  <input type="text" name="pdate1" id="pdate1"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+                </div>
+              </div>
+              <div class="col-lg-6 col-xl-6 col-sm-12 col-md-6">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text shabnam">تا تاریخ</div>
+                  </div>
+                  <input type="text" name="pdate2"  class="form-control pdate shabnam" placeholder="تاریخ" dir="rtl" required>
+                </div>
+              </div>
+             
+  
+            <div class="col-12">
+  
+                <div  style="margin: 10px 5px;">
+                    <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">گزارش</button>
+                </div>
+                </div>
+            </form>
+    </div>
+  </div>
+  
+  
+  <h1 class="shabnam" id="title1" style="margin-top: 20px; font-size: large !important; font-weight: 800;"></h1>
+  <div class="rtl_class" style="overflow-x:auto;">
+      <!-- <h1 class="shabnam center" style="font-size: large !important;">مصرف کاربران در ماه جاری &nbsp;<span class="small">(دانلود  /  آپلود) گیگابایت</span></h1> -->
+      <br>
+    
+    <table class="table table-bordered table-striped">
+      <thead>
+          <tr class="shabnam table-header">
+              <!-- <th>نام</th>
+              <th>تلگرام</th>
+              <th>اینستاگرام</th>
+              <th>دیگر</th>
+              <th>کل مصرف</th>
+              <th>مجموع</th> -->
+  
+          </tr>
+      </thead>
+      <tbody class="report_table">
+    
+      </tbody>
+    </table>
+    </div>
+  
+  
+    <!-- Charts -->
+  
+    <div class="row rtl">
+      <div class="card col-lg-6 col-md-6 col-sm-12">
+        <div class="card-header">
+          <h1 class="shabnam center" style="font-size: large !important;">مصرف مقصدها &nbsp;<span class="small">(دانلود  /  آپلود) گیگابایت</span></h1>
+        </div>
+        <div class="card-body">
+          <div id="destination_pie_chart"></div>
+        </div>
+      </div>
+  
+        <div class="card col-lg-6 col-md-6 col-sm-12">
+          <div class="card-header">
+            <h1 class="shabnam center" style="font-size: large !important;">مصرف دستگاه ها &nbsp;<span class="small">(دانلود  /  آپلود) گیگابایت</span></h1>
+          </div>
+          <div class="card-body">
+            <div id="devices_pie_chart"></div>
+          </div>
+        </div>
+      
+    </div>
+
+
+
+
+  <script src="../assets/js/self_report.js"></script>
+{% endblock %}

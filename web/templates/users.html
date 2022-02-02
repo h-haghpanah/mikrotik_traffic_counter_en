@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div  style="text-align:center; margin-bottom: 20px;">
+  <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه کردن کاربر</button>
+  <div class="show" style="display: none;">
+    <form id="add_user" name="add_user" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+    
+            <div class="form-row">
+            <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نام</div>
+                </div>
+                <input type="text" name="fname"  class="form-control fname shabnam" placeholder="نام" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نام خانوادگی</div>
+                </div>
+                <input type="text" name="lname"  class="form-control lname shabnam" placeholder="نام خانوادگی" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نام کاربری</div>
+                </div>
+                <input type="text" name="uname"  class="form-control uname shabnam" placeholder="نام کاربری" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">ایمیل </div>
+                </div>
+                <input type="email" name="email"  class="form-control email shabnam" placeholder="ایمیل " dir="rtl" required>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">رمز عبور </div>
+                </div>
+                <input type="password" name="password"  class="form-control password shabnam" placeholder="رمز عبور " dir="rtl" required>
+              </div>
+            </div>
+
+              <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">گروه</div>
+                </div>
+                <select id="gnames" name="gname" class="form-control shabnam gname" required>
+                    
+                </select>
+            </div>
+          </div>
+          <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text shabnam">دسترسی</div>
+              </div>
+              <select id="role" name="role" class="form-control shabnam role" required>
+                  
+              </select>
+          </div>
+        </div>
+
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+              </div>
+              </div>
+          </form>
+  </div>
+</div>
+
+
+
+
+
+<h5 style="text-align: right;">کاربران</h5>
+<div class="rtl_class" style="overflow-x:auto;">
+    <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr class="shabnam table-header">
+
+        </tr>
+    </thead>
+    <tbody class="users-table">
+  
+    </tbody>
+  </table>
+  </div>
+
+<br>
+
+<div  style="text-align:center; margin: 20px 0;">
+  <button id="toggle2" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه کردن گروه</button>
+  <div class="show2" style="display: none;">
+    <form id="add_group" name="add_group" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+    
+            <div class="form-row">
+            <div class="col">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">نام</div>
+                </div>
+                <input type="text" name="gname"  class="form-control fname shabnam" placeholder="نام" dir="rtl" required>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text shabnam">توضیحات</div>
+                </div>
+                <input type="text" name="description"  class="form-control fname shabnam" placeholder="توضیحات" dir="rtl" >
+              </div>
+            </div>
+           
+            </div>
+          <div class="col-12">
+
+              <div  style="margin: 10px 5px;">
+                  <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+              </div>
+              </div>
+          </form>
+  </div>
+</div>
+
+
+  <h5 style="text-align: right;">گروه ها</h5>
+<div class="rtl_class" style="overflow-x:auto;">
+    <br>
+  <table class="table table-bordered table-striped">
+    <thead>
+        <tr class="shabnam group-table-header">
+
+        </tr>
+    </thead>
+    <tbody class="groups-table">
+  
+    </tbody>
+  </table>
+  </div>
+
+  <script src="../assets/js/users.js"></script>
+  <link rel="stylesheet" href="..//assets/css/users.css">
+{% endblock %}
