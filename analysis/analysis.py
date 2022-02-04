@@ -24,6 +24,7 @@ def replaceusers(html, users):   # Repalacing Defined Users In HTML File And Oth
 
      local_regex = database2.local_ranges()
      for regex in local_regex:
+        print(regex)
         html = re.sub(regex["local_range_regex"], "other-40-20", html)
 
      return html
@@ -43,7 +44,6 @@ def trafficCounter(html, user):   #Count Traffic For Users
     usage = []
 
     for item in html:
-        print(item)
         if item != [""]:
             if item[0] == user_key:
                 traffic["upload"] = round(float(item[2])/1048576,2)

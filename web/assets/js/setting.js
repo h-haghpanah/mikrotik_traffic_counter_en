@@ -94,11 +94,12 @@ function modify_mikrotik(event) {
 
     }
 
-  $('#add_local_range').on('click','button',add_device)
+  $('#add_local_range').on('click','button',add_local_range)
   
-  function add_device(event){
+  function add_local_range(event){
       event.preventDefault();
       var allData = $("#add_local_range").serialize();
+      console.log(allData)
       $.ajax({
           url:"/add_local_range",
           method: "post",

@@ -553,7 +553,7 @@ def add_local_range():
         mask = request.form["mask"]
         local_range_address = ip+"/"+mask
         local_range_regex = convert.cidr_to_regex(local_range_address)
-        local_range_regex = re.escape(local_range_regex)
+        # local_range_regex = re.escape(local_range_regex)
         database.add_local_range(local_range_address,local_range_regex)
 
         return "1"
