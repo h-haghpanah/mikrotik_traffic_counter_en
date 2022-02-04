@@ -11,7 +11,6 @@ $(document).ready(function(){
         // $('.datepicker').datepicker({
         //     dateFormat: 'yy-mm-dd'
         // })
-        $('.wbn-datepicker').datepicker();
     
         var show = $('.show');
         $('#toggle').on('click', function() {

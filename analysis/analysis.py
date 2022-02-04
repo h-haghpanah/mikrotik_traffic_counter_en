@@ -41,7 +41,9 @@ def trafficCounter(html, user):   #Count Traffic For Users
     user_key = str(user["user_name"]) + "-" + str(user["device_id"]) + "-" + str(user["ip_id"])
     traffic = {}
     usage = []
+
     for item in html:
+        print(item)
         if item != [""]:
             if item[0] == user_key:
                 traffic["upload"] = round(float(item[2])/1048576,2)

@@ -256,19 +256,19 @@ def read_roles():
 @app.route("/read_users_full_report", methods=["POST"])
 def read_users_full_report():
     if request.method == "POST":
-        pdate1 = request.form["pdate1"]
-        pdate2 = request.form["pdate2"]
-        if pdate1 == "this_month":
+        date1 = request.form["date1"]
+        date2 = request.form["date2"]
+        if date1 == "this_month":
             today = str(datetime.today().strftime('%Y-%m-%d'))
-            pdate1 = str(tools.gregorian_to_jalali(today))
-            pdate = pdate1.split("-")
-            pdate1 = pdate[0] + "/" + pdate[1] + "/1"
-            pdate2 = pdate[0] + "/" + pdate[1] + "/31"
+            # pdate1 = str(tools.gregorian_to_jalali(today))
+            temp = today.split("-")
+            date1 = temp[0] + "-" + temp[1] + "-1"
+            date2 = temp[0] + "-" + temp[1] + "-31"
         if session["role"] != "User":
             user_id = request.form["id"]
         else:
             user_id = session["user_id"]
-        result = report.read_all_users_full_report(pdate1,pdate2,user_id)
+        result = report.read_all_users_full_report(date1,date2,user_id)
 
         device_table = []
         destination_usage = []
@@ -537,7 +537,7 @@ def add_device():
             ips = report.ip_list()
             for ipv4 in ips:
                 if ipv4["ip_value"] == ip:
-                    return f"آی پی متعلق به کاربر {ipv4['user_name']} و دستگاه {ipv4['device_name']} میباشد وامکان ثبت برای دستگاه جدید نمی باشد"
+                    return f"IP belog to user {ipv4['user_name']} and device {ipv4['device_name']} ,you cannot register this ip."
             database.add_device(dname,model,type,user,ip)
         else:
             return "wrong_ip"

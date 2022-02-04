@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<div  style="text-align:center; margin-bottom: 20px;">
-    <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه کردن مقصد</button>
+<div  style="text-align:center; margin-bottom: 20px;margin-top: 50px;">
+    <button id="toggle" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">Add destination</button>
     <div class="show" style="display: none;">
       <form id="add_destination" name="add_destinations" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
       
@@ -9,23 +9,23 @@
               <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <div class="input-group-text shabnam">نام</div>
+                    <div class="input-group-text shabnam">Name</div>
                   </div>
-                  <input type="text" name="dname"  class="form-control dname shabnam" placeholder="نام" dir="rtl" required>
+                  <input type="text" name="dname"  class="form-control dname shabnam" placeholder="" required>
                 </div>
               </div>
               <div class="col-lg-4 col-xl-4 col-sm-12 col-md-4">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <div class="input-group-text shabnam">توضیحات</div>
+                    <div class="input-group-text shabnam">Description</div>
                   </div>
-                  <input type="text" name="description"  class="form-control description shabnam" placeholder="توضیحات" dir="rtl" required>
+                  <input type="text" name="description"  class="form-control description shabnam" placeholder="" required>
                 </div>
               </div>
               <div class="col-lg-3 col-xl-3 col-sm-12 col-md-3">
                 <div class="input-group">
                   <div class="input-group-prepend">
-                    <div class="input-group-text shabnam">رنگ</div>
+                    <div class="input-group-text shabnam">Color code</div>
                   </div>
                   <input style="height: 35px;" name="color" type="color" class="form-control form-control-color" value="#563d7c" title="Choose your color">
 
@@ -37,7 +37,7 @@
             <div class="col-12">
   
                 <div  style="margin: 10px 5px;">
-                    <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+                    <button type="submit"  class="btn btn-dark btn-xs shabnam">Add</button>
                 </div>
                 </div>
             </form>
@@ -47,8 +47,8 @@
 
 
   
-  <h5>مقصد ها</h5>
-  <div class="rtl_class" style="overflow-x:auto;">
+  <h5>Destinations</h5>
+  <div style="overflow-x:auto;">
       <br>
     <table class="table table-bordered table-striped">
       <thead>
@@ -64,34 +64,32 @@
 
 <br>
     <div  style="text-align:center; margin-bottom: 20px;">
-        <button id="toggle2" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">اضافه کردن آدرس</button>
+        <button id="toggle2" style="max-width: 150px" type="button" class="btn btn-dark shabnam add">Add address</button>
         <div class="show2" style="display: none;">
-          <form id="add_address" name="add_address" class="inline-form rtl_class form-row" style="justify-content: center; margin-top: 20px;">
+          <form id="add_address" name="add_address" class="inline-form form-row" style="justify-content: center; margin-top: 20px;">
           
                   <div class="form-row">
-                    <div class="col">
+                    <div class="col-5">
                       <div class="input-group">
                         <div class="input-group-prepend">
-                          <div class="input-group-text shabnam">آدرس</div>
+                          <div class="input-group-text shabnam">Address</div>
                         </div>
-                        <input type="number" name="mask" class="form-input form-control mask shabnam editable" style="max-width: 100px;" min="1" max="32" maxlength="2" placeholder="نت مسک">
+                        <input type="text" id="ip"  name="ip" class="form-input form-control ip shabnam" placeholder="xxx.xxx.xxx.xxx" required>
                         <span style="font-size: 25px;">/</span>
                       </div>
                     </div>
 
-                  <div class="col">
+                  <div class="col-2">
                     <div class="input-group">
-                      <div class="input-group-prepend">
-                        <!-- <div class="input-group-text shabnam">آی پی</div> -->
-                      </div>
-                      <input type="text" id="ip"  name="ip" class="form-input form-control ip shabnam" placeholder="xxx.xxx.xxx.xxx" required>
+                      
+                      <input type="number" name="mask" class="form-input form-control mask shabnam editable" style="max-width: 100px;" min="1" max="32" maxlength="2" placeholder="mask">
                     </div>
                   </div>
     
-                  <div class="col">
+                  <div class="col-5">
                     <div class="input-group">
                       <div class="input-group-prepend">
-                        <div class="input-group-text shabnam">مقصد</div>
+                        <div class="input-group-text shabnam">Destination</div>
                       </div>
                       <select id="destination" name="destination" class="form-control shabnam gname" required>
                           
@@ -104,15 +102,15 @@
                 <div class="col-12">
       
                     <div  style="margin: 10px 5px;">
-                        <button type="submit"  class="btn btn-dark btn-xs shabnam" dir="rtl">افزودن</button>
+                        <button type="submit"  class="btn btn-dark btn-xs shabnam">Add</button>
                     </div>
                     </div>
                 </form>
         </div>
       </div>
 
-    <h5>آدرس ها</h5>
-    <div class="rtl_class" style="overflow-x:auto;">
+    <h5>Addresses</h5>
+    <div style="overflow-x:auto;">
         <br>
       <table class="table table-bordered table-striped">
         <thead>

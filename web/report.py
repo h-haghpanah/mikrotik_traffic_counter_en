@@ -88,7 +88,7 @@ def groups_list_without_other():
     result = mycursor.fetchall()
     result_without_other = []
     for res in result:
-        if res["group_name"] == "دیگر":
+        if res["group_name"] == "Other":
             continue
         else:
             result_without_other.append(res)
@@ -289,7 +289,7 @@ def user_traffic(date1,date2,user_id):
                     result[-1]["download"] = round(float(result[-1]["download"]) + float(traffic["download"]),2)
                     result[-1]["upload"] = round(float(result[-1]["upload"]) + float(traffic["upload"]),2)
             if destinations.index(destination) == len(destinations)-1:
-                result.append({'first_name': user["first_name"], 'first_name': user["last_name"], 'user_name': user["user_name"],'destination_name' : "دیگر" ,'device_name': device["device_name"] ,'device_id': device["device_id"] , 'download': 0.0 , 'upload': 0.0})
+                result.append({'first_name': user["first_name"], 'first_name': user["last_name"], 'user_name': user["user_name"],'destination_name' : "Other" ,'device_name': device["device_name"] ,'device_id': device["device_id"] , 'download': 0.0 , 'upload': 0.0})
                 for traffic in traffics:
                     if traffic["device_id"] == device["device_id"] and traffic["destination_id"] == None:
                         result[-1]["download"] = round(float(result[-1]["download"]) + float(traffic["download"]),2)
@@ -320,7 +320,7 @@ def traffic_by_user_device_destination(date1,date2,user_id,destination_name,devi
 def users_traffic_overview(date1,date2):
     users = users_list()
     destinations = destinations_list()
-    other = {'destination_name' : "دیگر"}
+    other = {'destination_name' : "Other"}
     destinations.append(other)
     results = []
     for user in users:
@@ -349,7 +349,7 @@ def read_user_full_report(date1,date2,user_id):
     destination_traffic = []
     device_traffics = [] 
     destinations = destinations_list()
-    other = {'destination_name' : "دیگر"}
+    other = {'destination_name' : "Other"}
     destinations.append(other)
     for device in devices:
         for destination in destinations:

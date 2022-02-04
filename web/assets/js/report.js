@@ -12,10 +12,10 @@ $(document).ready(function(){
     $('#toggle').on('click', function() {
         $('#toggle').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle').html("گزارش مصرف");
+        if (temp == "Hide"){
+            $('#toggle').html("Change Date Range");
         }else{
-        $('#toggle').html("پنهان کردن")
+        $('#toggle').html("Hide")
         }
         show.fadeToggle();  
     });
@@ -25,7 +25,7 @@ $(document).ready(function(){
             url:"/read_users",
             method: "get",
             success: function(response){
-                var items = '<option style="justfy" value="" disabled> انتخاب کاربر</option>\n<option style="justfy" value="all" selected> تمام کاربران</option>\n';
+                var items = '<option style="justfy" value="" disabled>Select User</option>\n<option style="justfy" value="all" selected>All Users</option>\n';
                 if( response.length > 0 )
                 {
                 for (var i in response){
@@ -34,7 +34,7 @@ $(document).ready(function(){
                 }
                 $("#company").html("").append(items)
             }else {
-                items +='<option style="font-family: shabnam;" value="" >کاربری یافت نشد</option>\n'
+                items +='<option style="font-family: shabnam;" value="" >No user found</option>\n'
                 $(".content-overview").html("").append(items)
             }
             }
@@ -52,9 +52,9 @@ $(document).ready(function(){
     function read_report_table(event,allData,allData2) {
         event.preventDefault()
         if(allData2[0].value  ==  allData2[1].value){
-            $("#title1").html("").append("  مصرف اینترنت  در تاریخ&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+            $("#title1").html("").append("Traffic usage in&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(Gigabyte)</span>')
         }else{
-            $("#title1").html("").append("مصرف اینترنت  از تاریخ&nbsp; " + allData2[0].value + ' تا تاریخ '+ allData2[1].value +' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+            $("#title1").html("").append("Traffic usage from&nbsp; " + allData2[0].value + ' to '+ allData2[1].value +' &nbsp; <span class="small">(Gigabyte)</span>')
         }
         $.ajax({
             url:"/read_users_full_report",
@@ -110,17 +110,9 @@ $(document).ready(function(){
                     destination_pie_chart(response[1])
                     devices_pie_chart(response[2])
                     $(".report_table").html("").append(content4)
-
-                    // if(repeat_report%2 == 0){
-                    //     repeat_report = repeat_report + 1
-                    //     document.getElementById("report_btn").click();
-                    // }
-                    // else{
-                    //     repeat_report = repeat_report + 1
-                    // }
                     
                 }
-                $("table .table-header").html("<th>نام کاربر</th>\n<th>نام دستگاه</th>\n<th>مقصد</th>\n<th>ترافیک (دانلود / آپلود)</th>\n<th>مجموع دانلود و آپلود</th>\n<th>کل ترافیک</th>")//.append(no_content)
+                $("table .table-header").html("<th>Name</th>\n<th>Device</th>\n<th>Destination</th>\n<th>Traffic (Download/Upload)</th>\n<th>Sum</th>\n<th>Total Traffic</th>")//.append(no_content)
             }  
   
         })
@@ -144,8 +136,7 @@ $(document).ready(function(){
                     series: usage,
                     chart: {
                     type: 'pie',
-                    height: 350,
-                    fontFamily: 'shabnam'
+                    height: 350
                 },
                 fill: {
                     colors: colors
@@ -193,8 +184,7 @@ $(document).ready(function(){
                 series: usage,
                 chart: {
                 type: 'pie',
-                height: 350,
-                fontFamily: 'shabnam'
+                height: 350
             },
             labels: names,
             responsive: [{

@@ -12,10 +12,10 @@ $(document).ready(function(){
     $('#toggle').on('click', function() {
         $('#toggle').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle').html("اضافه کردن دستگاه");
+        if (temp == "Hide"){
+            $('#toggle').html("Add device");
         }else{
-        $('#toggle').html("پنهان کردن")
+        $('#toggle').html("Hide")
         }
         show.fadeToggle();  
     });
@@ -24,10 +24,10 @@ $(document).ready(function(){
     $('#toggle2').on('click', function() {
         $('#toggle2').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle2').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle2').html("نمایش دستگاه ها");
+        if (temp == "Hide"){
+            $('#toggle2').html("Show devices");
         }else{
-        $('#toggle2').html("پنهان کردن")
+        $('#toggle2').html("Hide")
         }
         show2.fadeToggle();  
     });
@@ -38,7 +38,7 @@ $(document).ready(function(){
             url:"/read_users",
             method: "get",
             success: function(response){
-                var items = '<option style="justfy" value="" disabled> انتخاب کاربر</option>\n<option style="justfy" value="all" selected> تمام کاربران</option>\n';
+                var items = '<option style="justfy" value="" disabled>Select User</option>\n<option style="justfy" value="all" selected> تمام کاربران</option>\n';
                 if( response.length > 0 )
                 {
                 for (var i in response){
@@ -47,7 +47,7 @@ $(document).ready(function(){
                 }
                 $("#users_list").html("").append(items)
             }else {
-                items +='<option style="font-family: shabnam;" value="" >کاربری یافت نشد</option>\n'
+                items +='<option style="font-family: shabnam;" value="" >No user found</option>\n'
                 $("#users_list").html("").append(items)
             }
             }
@@ -74,7 +74,7 @@ $(document).ready(function(){
                 for (var i in response){
                     var ip_value = response[i].ip_value;
                     if(ip_value == null || ip_value == ""){
-                        ip_value = "بدون آی پی"
+                        ip_value = "Without IP"
                     }
                     content += "<tr class='shabnam'>\n"+
                     "<td class='editable col-md-1 col-sm-1 dname'>"+response[i].device_name+" </td>\n"+
@@ -82,15 +82,15 @@ $(document).ready(function(){
                     "<td class='editable col-md-1 col-sm-1 ip' id='"+response[i].ip_id+"'>"+ip_value+"</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 tname' id='tname"+ response[i].device_id +"'>"+ response[i].type_name +"</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 uname' id='uname"+ response[i].device_id +"'>"+ response[i].user_name +"</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].device_id+"' class='btn btn-dark modify'>ویرایش</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].device_id+"' class='btn btn-secondary delete'>حذف</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].device_id+"' class='btn btn-dark modify'>Modify</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].device_id+"' class='btn btn-secondary delete'>Delete</td>\n"+
 
                 "</tr>\n"
                 }
-                $("table .table-header").html("<th>نام</th>\n<th>مدل</th>\n<th>آی پی</th>\n<th>نوع</th>\n<th>کاربر</th>\n<th>ویرایش</th>\n<th>حذف</th>")
+                $("table .table-header").html("<th style='text-align:center'>Name</th>\n<th style='text-align:center'>Model</th>\n<th style='text-align:center'>IP</th>\n<th style='text-align:center'>Type</th>\n<th style='text-align:center'>User</th>\n<th style='text-align:center'>Modify</th>\n<th style='text-align:center'>Delete</th>")
                 $(".devices-table").html("").append(content)
             }else {
-                content ="<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>دستگاهی یافت نشد</h1>"
+                content ="<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No device found</h1>"
                 $(".table-header").html("").append(content)
                 $(".devices-table").html("")
             }
@@ -105,7 +105,7 @@ $(document).ready(function(){
             url:"/read_groups",
             method: "get",
             success: function(response){
-                var groups = '<option style="font-family: shabnam;" value="" selected>انتخاب گروه</option>\n'
+                var groups = '<option style="font-family: shabnam;" value="" selected>Select Group</option>\n'
                 if( response.length > 0 )
                 {
                 for (var i in response){
@@ -115,7 +115,7 @@ $(document).ready(function(){
                 $("#gnames").html("").append(groups)
                 // $(this).html(content)
             }else {
-                groups ='<option style="font-family: shabnam;" id="" >گروهی یافت نشد</option>'
+                groups ='<option style="font-family: shabnam;" id="" >No group found</option>'
                 $("#gnames").html("").append(groups)
                 // $(this).html(content)
             }
@@ -130,17 +130,17 @@ $(document).ready(function(){
             url:"/read_roles",
             method: "get",
             success: function(response){
-                var roles = '<option style="font-family: shabnam;" value="" selected>انتخاب دسترسی</option>\n'
+                var roles = '<option style="font-family: shabnam;" value="" selected>Select role</option>\n'
                 if( response.length > 0 )
                 {
                 for (var i in response){
-                    roles += '<option style="font-family: shabnam;" value="' + response[i].role_id +'">' + response[i].role_name + '</option>\n'
+                    roles += '<option style="font-family: shabnam;" value="' + response[i].role_id +'">' + response[i].role_name_en + '</option>\n'
                 }
                 
                 $("#role").html("").append(roles)
                 // $(this).html(content)
             }else {
-                groups ='<option style="font-family: shabnam;" id="" >گروهی یافت نشد</option>'
+                groups ='<option style="font-family: shabnam;" id="" >No group found</option>'
                 $("#role").html("").append(roles)
                 // $(this).html(content)
             }
@@ -208,7 +208,7 @@ $(document).ready(function(){
                         $("#"+uname).html("").append(content)
                         // $(this).html(content)
                     }else {
-                        content ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >دسترسی یافت نشد</option></select>'
+                        content ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >No role found</option></select>'
                         $("#uname" + response[i].device_id).html("").append(content)
                         // $(this).html(content)
                     }
@@ -218,7 +218,7 @@ $(document).ready(function(){
             
             }else{
             var val = $(this).html();
-            if(val == "بدون آی پی"){
+            if(val == " Without IP"){
                 $(this).html("<input class='form-control' type='text' value=''>")
             }else{
             $(this).html("<input class='form-control' type='text' value='"+ val +"'>")
@@ -228,7 +228,7 @@ $(document).ready(function(){
         });
         $(this).addClass("active");
         $(this).toggleClass("btn-info btn-warning")
-        $(this).html("اعمال")
+        $(this).html("Apply")
     }else {
         var id = $(this).attr("id");
         var dname = $(this).parent().siblings(".dname").children("input").val();
@@ -254,15 +254,15 @@ $(document).ready(function(){
                 show_devices("user="+uname);
                 }
                 else if(response == "not_valid"){
-                    alert("نام ، نام کاربری ،گروه و ایمیل نمی تواند خالی باشد")
+                    alert("Name,username,group and email connot be empty.")
                 }
                 else if(response == "user_exist"){
-                    alert("کاربری با این نام کاربری موجود است")
+                    alert("This username exist.")
                 }
                 else if(response == "email_exist"){
-                    alert("کاربری با این ایمیل موجود است")
+                    alert("This email exist")
                 }else{
-                    alert("خطایی رخ داده است")
+                    alert("Something happend")
                 }
 
             }
@@ -274,20 +274,20 @@ $(document).ready(function(){
     function delete_alert(event){
         event.preventDefault();
         Swal.fire({
-            title: '<span class="shabnam rtl_class big-font">آیا مطمعن هستید؟</span>',
-            html: '<span " class="shabnam rtl_class">این عمل غیر قابل بازگشت است</span>',
+            title: '<span class="shabnam rtl_class big-font">Are you sure ?</span>',
+            html: '<span " class="shabnam rtl_class">This action connot be reverted.</span>',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: '<span class="shabnam rtl_class">بیخیال</span>',
-            confirmButtonText: '<span class="shabnam rtl_class">بله ، پاکش کن</span>'
+            cancelButtonText: '<span class="shabnam rtl_class">Cansel</span>',
+            confirmButtonText: '<span class="shabnam rtl_class">Yes,delete it</span>'
             }).then((result) => {
             if (result.isConfirmed) {
                 var id = $(this).attr("id");
                 deletedevice(id);
                 Swal.fire(
-                '<span class="shabnam rtl_class">دستگاه شما با موفقیت پاک شد</span>',
+                '<span class="shabnam rtl_class">Your device deleted successfully</span>',
                 '',
                 'success'
                 )
@@ -323,12 +323,12 @@ $(document).ready(function(){
                     $("input").val("");
                     show_devices("user="+allData2[3]["value"])
                 }else if(response == "not_valid"){
-                    alert("تمام فیلد ها اجباری هستند")
+                    alert("All fields are required.")
                 }else if(response == "device_exist"){
-                    alert("دستگاهی با این مشخصات برای این کاربر موجود است")
+                    alert("Device this name is exist for current user.")
                     }
                     else if(response == "wrong_ip"){
-                        alert("آی پی وارد شده یا اشتباه است یا در بازه شبکه داخلی نیست")
+                        alert("IP address is wrong or not in local nerwork ranges.")
                         }else{
                             alert(response)
                         }
@@ -352,7 +352,7 @@ $(document).ready(function(){
                 $("#user").html("").append(content)
                 $("#users_list").html("").append(content)
             }else {
-                content ='<option style="font-family: shabnam;" id="" >کاربری یافت نشد</option>'
+                content ='<option style="font-family: shabnam;" id="" >No user found</option>'
                 $("#user").html("").append(content)
                 $("#users_list").html("").append(content)
             }
@@ -376,7 +376,7 @@ $(document).ready(function(){
                 }
                 $("#type").html("").append(content)
             }else {
-                content ='<option style="font-family: shabnam;" id="" >نوع یافت نشد</option>'
+                content ='<option style="font-family: shabnam;" id="" >No type found</option>'
                 $("#type").html("").append(content)
             }
             }
@@ -388,7 +388,7 @@ $(document).ready(function(){
     var ipv4_address = $('#ipv4');
     ipv4_address.inputmask({
     alias: "ip",
-    greedy: false //The initial mask shown will be "" instead of "-____".
+    greedy: false 
     });
 
   

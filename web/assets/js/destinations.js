@@ -5,10 +5,10 @@ $(document).ready(function(){
     $('#toggle').on('click', function() {
         $('#toggle').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle').html("اضافه کردن مقصد");
+        if (temp == "Hide"){
+            $('#toggle').html("Add destination");
         }else{
-        $('#toggle').html("پنهان کردن")
+        $('#toggle').html("Hide")
         }
         show.fadeToggle();  
     });
@@ -17,10 +17,10 @@ $(document).ready(function(){
     $('#toggle2').on('click', function() {
         $('#toggle2').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle2').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle2').html("اضافه کردن آدرس");
+        if (temp == "Hide"){
+            $('#toggle2').html("Add address");
         }else{
-        $('#toggle2').html("پنهان کردن")
+        $('#toggle2').html("Hide")
         }
         show2.fadeToggle();  
     });
@@ -41,14 +41,14 @@ $(document).ready(function(){
                     "<td class='editable col-md-1 col-sm-1 dname'>"+response[i].destination_name+" </td>\n"+
                     "<td class='editable col-md-1 col-sm-1 description'>"+response[i].descriptions+"</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 color'><input style='height: 35px; max-width: 40px; padding:0; display:inline-block;' type='color' class='form-control form-control-color' value='"+response[i].color_id+"' title='Choose your color' disabled></input></td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_id+"' class='btn btn-dark modify'>ویرایش</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_id+"' class='btn btn-secondary delete_dst'>حذف</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_id+"' class='btn btn-dark modify'>Modify</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_id+"' class='btn btn-secondary delete_dst'>Delete</td>\n"+
                 "</tr>\n"
                 }
-                $("table .table-header-destination").html("<th>نام</th>\n<th>توضیحات</th>\n<th>رنگ</th>\n<th>ویرایش</th>\n<th>حذف</th>")
+                $("table .table-header-destination").html("<th style='text-align:center'>Name</th>\n<th style='text-align:center'>Description</th>\n<th style='text-align:center'>Color</th>\n<th style='text-align:center'>Modify</th>\n<th style='text-align:center'>Delete</th>")
                 $(".destination-table").html("").append(content)
             }else {
-                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>مقصدی یافت نشد</h1>"
+                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No destination found</h1>"
                 $(".table-header").html("").append(Content)
             }
 
@@ -62,7 +62,7 @@ $(document).ready(function(){
             url:"/read_destinations",
             method: "get",
             success: function(response){
-                var content = '<option style="font-family: shabnam;" value="" selected disabled>انتخاب مقصد</option>\n';
+                var content = '<option style="font-family: shabnam;" value="" selected disabled>destination</option>\n';
                 if( response.length > 0 )
                 {
                 for (var i in response){
@@ -70,7 +70,7 @@ $(document).ready(function(){
                 }
                 $("#destination").html("").append(content)
             }else {
-                content = '<option style="font-family: shabnam;" value="" selected disabled>مقصدی یافت نشد</option>\n'
+                content = '<option style="font-family: shabnam;" value="" selected disabled>No destination found</option>\n'
                 $("#destination").html("").append(Content)
             }
 
@@ -93,13 +93,13 @@ $(document).ready(function(){
                     "<td class='editable col-md-1 col-sm-1 dname'>"+response[i].destination_address+" </td>\n"+
                     "<td class='editable col-md-1 col-sm-1 description'>"+response[i].destination_name+"</td>\n"+
                     // "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_id+"' class='btn btn-dark modify'>ویرایش</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_address_id+"' class='btn btn-secondary delete'>حذف</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].destination_address_id+"' class='btn btn-secondary delete'>Delete</td>\n"+
                 "</tr>\n"
                 }
-                $("table .table-header-address").html("<th>آدرس</th>\n<th>مقصد</th>\n<th>حذف</th>")
+                $("table .table-header-address").html("<th style='text-align:center'>Address</th>\n<th style='text-align:center'>Destination</th>\n<th style='text-align:center'>Delete</th>")
                 $(".address-table").html("").append(content)
             }else {
-                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>آدرسی یافت نشد</h1>"
+                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No address found</h1>"
                 $(".table-header").html("").append(Content)
             }
 
@@ -123,7 +123,7 @@ $(document).ready(function(){
                 read_destinations_dropdown()
                 $("input").val("");
                 }else if(response == "destination_exist"){
-                  alert("مقصدی با این نام موجود است")
+                  alert("Destination exist with this name.")
                 }
               }
           
@@ -145,7 +145,7 @@ $(document).ready(function(){
                 read_addresses()
                 $("input").val("");
                 }else if(response == "address_exist"){
-                  alert("این آدرس موجود است")
+                  alert("This address exist.")
                 }
               }
           
@@ -157,20 +157,20 @@ $(document).ready(function(){
   function delete_alert(event){
       event.preventDefault();
       Swal.fire({
-          title: '<span class="shabnam rtl_class big-font">آیا مطمعن هستید؟</span>',
-          html: '<span " class="shabnam rtl_class">این عمل غیر قابل بازگشت است</span>',
+          title: '<span class="shabnam rtl_class big-font">Are you sure ?</span>',
+          html: '<span " class="shabnam rtl_class">This action cannot be reverted.</span>',
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          cancelButtonText: '<span class="shabnam rtl_class">بیخیال</span>',
-          confirmButtonText: '<span class="shabnam rtl_class">بله ، پاکش کن</span>'
+          cancelButtonText: '<span class="shabnam rtl_class">Cansel</span>',
+          confirmButtonText: '<span class="shabnam rtl_class">Yes,delete it</span>'
           }).then((result) => {
           if (result.isConfirmed) {
               var id = $(this).attr("id");
               delete_address(id);
               Swal.fire(
-              '<span class="shabnam rtl_class">آدرس شما با موفقیت پاک شد</span>',
+              '<span class="shabnam rtl_class">Your address successfully deleted.</span>',
               '',
               'success'
               )
@@ -195,20 +195,20 @@ $(document).ready(function(){
   function delete_alert_dst(event){
       event.preventDefault();
       Swal.fire({
-          title: '<span class="shabnam rtl_class big-font">آیا مطمعن هستید؟</span>',
-          html: '<span " class="shabnam rtl_class">این عمل غیر قابل بازگشت است</span>',
+          title: '<span class="shabnam rtl_class big-font">Are you sure?</span>',
+          html: '<span " class="shabnam rtl_class">This action cannot be reverted.</span>',
           icon: 'warning',
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
-          cancelButtonText: '<span class="shabnam rtl_class">بیخیال</span>',
-          confirmButtonText: '<span class="shabnam rtl_class">بله ، پاکش کن</span>'
+          cancelButtonText: '<span class="shabnam rtl_class">Cansel</span>',
+          confirmButtonText: '<span class="shabnam rtl_class">Yes,delete it</span>'
           }).then((result) => {
           if (result.isConfirmed) {
               var id = $(this).attr("id");
               delete_destination(id);
               Swal.fire(
-              '<span class="shabnam rtl_class">مقصد شما با موفقیت پاک شد</span>',
+              '<span class="shabnam rtl_class">your destination deleted successfully.</span>',
               '',
               'success'
               )
@@ -246,7 +246,7 @@ $(document).ready(function(){
       });
       $(this).addClass("active");
       $(this).toggleClass("btn-dark btn-secondary")
-      $(this).html("اعمال")
+      $(this).html("Apply")
   }else {
       var id = $(this).attr("id");
       var dname = $(this).parent().siblings(".dname").children("input").val();
@@ -268,10 +268,10 @@ $(document).ready(function(){
               read_addresses();
               }
               else if(response == "dstination_name_exist"){
-                  alert("نام مقصد تکراری است")
+                  alert("Destination name exist.")
               }
               else{
-                  alert("خطایی رخ داده است")
+                  alert("Something happend.")
               }
 
           }

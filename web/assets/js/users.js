@@ -12,10 +12,10 @@ $(document).ready(function(){
     $('#toggle').on('click', function() {
         $('#toggle').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle').html("اضافه کردن کاربر");
+        if (temp == "Hide"){
+            $('#toggle').html("Add User");
         }else{
-        $('#toggle').html("پنهان کردن")
+        $('#toggle').html("Hide")
         }
         show.fadeToggle();  
     });
@@ -24,10 +24,10 @@ $(document).ready(function(){
     $('#toggle2').on('click', function() {
         $('#toggle2').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle2').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle2').html("اضافه کردن گروه");
+        if (temp == "Hide"){
+            $('#toggle2').html("Add Group");
         }else{
-        $('#toggle2').html("پنهان کردن")
+        $('#toggle2').html("Hide")
         }
         show2.fadeToggle();  
     });
@@ -50,16 +50,16 @@ $(document).ready(function(){
                     "<td class='editable col-md-2 col-sm-2 email'>"+ response[i].email + "</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 password'>"+ "••••••••" +"</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 gname' id='gname"+ response[i].user_id +"'>"+ response[i].group_name +"</td>\n"+
-                    "<td class='editable col-md-1 col-sm-1 role' id='role"+ response[i].user_id +"'>"+ response[i].role_name +"</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-dark modify'>ویرایش</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-secondary delete'>حذف</td>\n"+
+                    "<td class='editable col-md-1 col-sm-1 role' id='role"+ response[i].user_id +"'>"+ response[i].role_name_en +"</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-dark modify'>Modify</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-secondary delete'>Delete</td>\n"+
 
                 "</tr>\n"
                 }
-                $("table .table-header").html("<th>نام</th>\n<th>نام خانوادگی</th>\n<th>نام کاربری</th>\n<th>ایمیل</th>\n<th>رمزعبور</th>\n<th>گروه</th>\n<th>دسترسی</th>\n<th>ویرایش</th>\n<th>حذف</th>")
+                $("table .table-header").html("<th>Firstname</th>\n<th>Lastname</th>\n<th>Username</th>\n<th>Email</th>\n<th>Password</th>\n<th>Group</th>\n<th>Role</th>\n<th>Modify</th>\n<th>Delete</th>")
                 $(".users-table").html("").append(content)
             }else {
-                content ="<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>هیچ کاربری یافت نشد</h1>"
+                content ="<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No user found</h1>"
                 $(".table-header").html("").append(content)
                 $(".users-table").html("").append(content)
 
@@ -75,7 +75,7 @@ $(document).ready(function(){
             url:"/read_groups",
             method: "get",
             success: function(response){
-                var groups = '<option style="font-family: shabnam;" value="" selected>انتخاب گروه</option>\n'
+                var groups = '<option style="font-family: shabnam;" value="" selected>Select Group</option>\n'
                 if( response.length > 0 )
                 {
                 for (var i in response){
@@ -85,7 +85,7 @@ $(document).ready(function(){
                 $("#gnames").html("").append(groups)
                 // $(this).html(content)
             }else {
-                groups ='<option style="font-family: shabnam;" id="" >گروهی یافت نشد</option>'
+                groups ='<option style="font-family: shabnam;" id="" >No group found</option>'
                 $("#gnames").html("").append(groups)
                 // $(this).html(content)
             }
@@ -107,15 +107,15 @@ $(document).ready(function(){
                     content += "<tr class='shabnam'>\n"+
                     "<td class='editable col-md-1 col-sm-1 gname'>"+response[i].group_name+" </td>\n"+
                     "<td class='editable col-md-1 col-sm-1 description'>"+response[i].description+"</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].group_id+"' class='btn btn-dark modify'>ویرایش</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].group_id+"' class='btn btn-secondary delete_group'>حذف</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].group_id+"' class='btn btn-dark modify'>Modify</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].group_id+"' class='btn btn-secondary delete_group'>Delete</td>\n"+
 
                 "</tr>\n"
                 }
-                $("table .group-table-header").html("<th>نام گروه</th>\n<th>توضیحات</th>\n<th>ویرایش</th>\n<th>حذف</th>")
+                $("table .group-table-header").html("<th>Gorup name</th>\n<th>Description</th>\n<th>Modify</th>\n<th>Delete</th>")
                 $(".groups-table").html("").append(content)
             }else {
-                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>هیچ گروهی یافت نشد</h1>"
+                content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No group found</h1>"
                 $(".group-table-header").html("")
                 $(".groups-table").html("").append(content)
 
@@ -131,17 +131,17 @@ $(document).ready(function(){
             url:"/read_roles",
             method: "get",
             success: function(response){
-                var roles = '<option style="font-family: shabnam;" value="" selected>انتخاب دسترسی</option>\n'
+                var roles = '<option style="font-family: shabnam;" value="" selected>Select Role</option>\n'
                 if( response.length > 0 )
                 {
                 for (var i in response){
-                    roles += '<option style="font-family: shabnam;" value="' + response[i].role_id +'">' + response[i].role_name + '</option>\n'
+                    roles += '<option style="font-family: shabnam;" value="' + response[i].role_id +'">' + response[i].role_name_en + '</option>\n'
                 }
                 
                 $("#role").html("").append(roles)
                 // $(this).html(content)
             }else {
-                groups ='<option style="font-family: shabnam;" id="" >گروهی یافت نشد</option>'
+                groups ='<option style="font-family: shabnam;" id="" >No role found</option>'
                 $("#role").html("").append(roles)
                 // $(this).html(content)
             }
@@ -177,7 +177,7 @@ $(document).ready(function(){
                         $("#"+gname).html("").append(content2)
                         // $(this).html(content)
                     }else {
-                        content2 ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >گروهی یافت نشد</option></select>'
+                        content2 ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >No group found</option></select>'
                         $("#gname" + response[i].user_id).html("").append(content2)
                         // $(this).html(content)
                     }
@@ -209,7 +209,7 @@ $(document).ready(function(){
                         $("#"+role).html("").append(content)
                         // $(this).html(content)
                     }else {
-                        content ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >دسترسی یافت نشد</option></select>'
+                        content ='<select class="form-control shabnam" required><option style="font-family: shabnam;" id="" >No role found</option></select>'
                         $("#role" + response[i].user_id).html("").append(content)
                         // $(this).html(content)
                     }
@@ -257,15 +257,15 @@ $(document).ready(function(){
                 read_users();
                 }
                 else if(response == "not_valid"){
-                    alert("نام ، نام کاربری ،گروه و ایمیل نمی تواند خالی باشد")
+                    alert("Name,username,group and email connot be empty")
                 }
                 else if(response == "user_exist"){
-                    alert("کاربری با این نام کاربری موجود است")
+                    alert("Username exist")
                 }
                 else if(response == "email_exist"){
-                    alert("کاربری با این ایمیل موجود است")
+                    alert("Email exist")
                 }else{
-                    alert("خطایی رخ داده است")
+                    alert("Something happend")
                 }
 
             }
@@ -284,7 +284,7 @@ $(document).ready(function(){
         });
         $(this).addClass("active");
         $(this).toggleClass("btn-dark btn-secondary")
-        $(this).html("اعمال")
+        $(this).html("Apply")
     }else {
         var id = $(this).attr("id");
         var gname = $(this).parent().siblings(".gname").children("input").val();
@@ -303,13 +303,13 @@ $(document).ready(function(){
                 read_groups_table();
                 }
                 else if(response == "group_name_exist"){
-                    alert("نام گروه تکراری است")
+                    alert("Group name exist")
                 }
                 else if(response == "other_not_valid"){
-                    alert("نام 'دیگر' مجاز نیست")
+                    alert("this group name not vaild")
                 }
                 else{
-                    alert("خطایی رخ داده است")
+                    alert("Something happend")
                 }
   
             }
@@ -324,20 +324,20 @@ $(document).ready(function(){
     function delete_alert(event){
         event.preventDefault();
         Swal.fire({
-            title: '<span class="shabnam rtl_class big-font">آیا مطمعن هستید؟</span>',
-            html: '<span " class="shabnam rtl_class">این عمل غیر قابل بازگشت است</span>',
+            title: '<span class="shabnam big-font">Are you sure ?</span>',
+            html: '<span " class="shabnam rtl_class">This action connot be reverted</span>',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: '<span class="shabnam rtl_class">بیخیال</span>',
-            confirmButtonText: '<span class="shabnam rtl_class">بله ، پاکش کن</span>'
+            cancelButtonText: '<span class="shabnam rtl_class">Cansel</span>',
+            confirmButtonText: '<span class="shabnam rtl_class">Yes,delete it</span>'
             }).then((result) => {
             if (result.isConfirmed) {
                 var id = $(this).attr("id");
                 deleteuser(id);
                 Swal.fire(
-                '<span class="shabnam rtl_class">کاربر شما با موفقیت پاک شد</span>',
+                '<span class="shabnam rtl_class">User deleted successfully</span>',
                 '',
                 'success'
                 )
@@ -356,7 +356,7 @@ $(document).ready(function(){
                     read_users();
                     }
                     else{
-                        alert("خطایی رخ داده است")
+                        alert("Something happend")
                     }
 
             }
@@ -368,20 +368,20 @@ $(document).ready(function(){
     function delete_alert(event){
         event.preventDefault();
         Swal.fire({
-            title: '<span class="shabnam rtl_class big-font">آیا مطمعن هستید؟</span>',
-            html: '<span " class="shabnam rtl_class">این عمل غیر قابل بازگشت و تمام کاربران زیر مجموعه آن هم پاک خواهد شد</span>',
+            title: '<span class="shabnam rtl_class big-font">Are you sure ?</span>',
+            html: '<span " class="shabnam rtl_class">This action cannot be reverted and all user assined to this group will delete !!</span>',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            cancelButtonText: '<span class="shabnam rtl_class">بیخیال</span>',
-            confirmButtonText: '<span class="shabnam rtl_class">بله ، پاکش کن</span>'
+            cancelButtonText: '<span class="shabnam rtl_class">Cansel</span>',
+            confirmButtonText: '<span class="shabnam rtl_class">Yes,delete it</span>'
             }).then((result) => {
             if (result.isConfirmed) {
                 var id = $(this).attr("id");
                 deletegroup(id);
                 Swal.fire(
-                '<span class="shabnam rtl_class">گروه شما با موفقیت پاک شد</span>',
+                '<span class="shabnam rtl_class">Group deleted successfully</span>',
                 '',
                 'success'
                 )
@@ -401,7 +401,7 @@ $(document).ready(function(){
                     read_groups_table();
                     }
                     else{
-                        alert("خطایی رخ داده است")
+                        alert("Something happend")
                     }
 
             }
@@ -426,14 +426,14 @@ $(document).ready(function(){
                     $("input").val("");
                     read_users()
                 }else if(response == "not_valid"){
-                    alert("نام ، نام کاربری ،گروه ، دسترسی و ایمیل نمی تواند خالی باشد")
+                    alert("Name,username,group and email connot be empty")
                 }else if(response == "user_exist"){
-                    alert("کاربری با این نام کاربری موجود است")
+                    alert("Username exist.")
                     }
                     else if(response == "email_exist"){
-                        alert("کاربری با این ایمیل موجود است")
+                        alert("Email exist.")
                         }else{
-                            alert("خطایی رخ داده است")
+                            alert("Something happend")
                         }
                 }
             
@@ -456,12 +456,12 @@ $(document).ready(function(){
                     read_groups()
                     read_groups_table()
                 }else if(response == "not_valid"){
-                    alert("نام نمی تواند خالی باشد")
+                    alert("Name cannot be empty")
                 }else if(response == "group_exist"){
-                    alert("گروهی با این نام موجود است")
+                    alert("Group name exist")
                     }
                     else{
-                            alert("خطایی رخ داده است")
+                            alert("Something happend")
                         }
                 }
             
