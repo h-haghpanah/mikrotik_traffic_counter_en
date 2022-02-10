@@ -52,7 +52,7 @@ $(document).ready(function(){
                     "<td class='editable col-md-1 col-sm-1 gname' id='gname"+ response[i].user_id +"'>"+ response[i].group_name +"</td>\n"+
                     "<td class='editable col-md-1 col-sm-1 role' id='role"+ response[i].user_id +"'>"+ response[i].role_name_en +"</td>\n"+
                     "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-dark modify'>Modify</td>\n"+
-                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-secondary delete'>Delete</td>\n"+
+                    "<td class='col-md-1 col-sm-1'><button id='"+response[i].user_id+"' class='btn btn-secondary delete_user'>Delete</td>\n"+
 
                 "</tr>\n"
                 }
@@ -112,7 +112,7 @@ $(document).ready(function(){
 
                 "</tr>\n"
                 }
-                $("table .group-table-header").html("<th>Gorup name</th>\n<th>Description</th>\n<th>Modify</th>\n<th>Delete</th>")
+                $("table .group-table-header").html("<th>Group name</th>\n<th>Description</th>\n<th>Modify</th>\n<th>Delete</th>")
                 $(".groups-table").html("").append(content)
             }else {
                 content = "<div class='jumbotron' style='margin:0 auto;'><h1 class='shabnam mid-font'>No group found</h1>"
@@ -197,10 +197,10 @@ $(document).ready(function(){
                         if( response.length > 0 )
                         {
                         for (var i in response){
-                            if (val != response[i].role_name){
-                            content += '<option style="font-family: shabnam;" value="' + response[i].role_id +'" id="' + response[i].role_id +'" >' + response[i].role_name + '</option>\n'
+                            if (val != response[i].role_name_en){
+                            content += '<option style="font-family: shabnam;" value="' + response[i].role_id +'" id="' + response[i].role_id +'" >' + response[i].role_name_en + '</option>\n'
                             }else{
-                                content += '<option style="font-family: shabnam;" value="' + response[i].role_id +'" id="' + response[i].role_id +'" selected>' + response[i].role_name + '</option>\n'
+                                content += '<option style="font-family: shabnam;" value="' + response[i].role_id +'" id="' + response[i].role_id +'" selected>' + response[i].role_name_en + '</option>\n'
                             }
 
                         }
@@ -229,7 +229,7 @@ $(document).ready(function(){
         });
         $(this).addClass("active");
         $(this).toggleClass("btn-info btn-warning")
-        $(this).html("اعمال")
+        $(this).html("Apply")
     }else {
         var id = $(this).attr("id");
         var fname = $(this).parent().siblings(".fname").children("input").val();
@@ -320,8 +320,8 @@ $(document).ready(function(){
 
 
 
-    $("div").on("click",".delete",delete_alert);
-    function delete_alert(event){
+    $("div").on("click",".delete_user",delete_user);
+    function delete_user(event){
         event.preventDefault();
         Swal.fire({
             title: '<span class="shabnam big-font">Are you sure ?</span>',
@@ -364,8 +364,8 @@ $(document).ready(function(){
     }
 
 
-    $("div").on("click",".delete_group",delete_alert);
-    function delete_alert(event){
+    $("div").on("click",".delete_group",delete_group);
+    function delete_group(event){
         event.preventDefault();
         Swal.fire({
             title: '<span class="shabnam rtl_class big-font">Are you sure ?</span>',
@@ -399,6 +399,7 @@ $(document).ready(function(){
                 if(response == "1"){
                     read_groups();
                     read_groups_table();
+                    read_users()
                     }
                     else{
                         alert("Something happend")
