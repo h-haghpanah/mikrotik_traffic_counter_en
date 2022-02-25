@@ -10,6 +10,7 @@ from tools import login_check,jalali_to_gregorian,gregorian_to_jalali
 import report
 import tools
 import convert
+import calendar
 
 
 app = Flask(__name__)
@@ -126,6 +127,11 @@ def setting():
         return render_template("setting.html")
     else:
         return render_template("403.html")
+
+@app.route("/about")
+@login_required
+def about():
+    return render_template("about.html")
 
 #################### READ ######################
 
@@ -260,10 +266,10 @@ def read_users_full_report():
         date2 = request.form["date2"]
         if date1 == "this_month":
             today = str(datetime.today().strftime('%Y-%m-%d'))
-            # pdate1 = str(tools.gregorian_to_jalali(today))
             temp = today.split("-")
-            date1 = temp[0] + "-" + temp[1] + "-1"
-            date2 = temp[0] + "-" + temp[1] + "-31"
+            monthrange = calendar.monthrange(int(temp[0]),int(temp[1]))
+            date1 = temp[0] + "-" + temp[1] + "-" + str(monthrange[0])
+            date2 = temp[0] + "-" + temp[1] + "-" + str(monthrange[1]) 
         if session["role"] != "User":
             user_id = request.form["id"]
         else:
@@ -341,15 +347,8 @@ def update_device():
         ip = request.form["ip"]
         tname = request.form["tname"]
         uname = request.form["uname"]
-        # if dname == "" or uname == "" or ip == "" or model == "":
-        #     return "not_valid"
-        # users = report.users_list()
-        # for user in users:
-        #     if user["user_name"] == uname and str(user["user_id"]) != str(id):
-        #         return "user_exist"
-            # if user["email"] == email and str(user["user_id"]) != str(id):
-            #     return "email_exist"
-        database.update_device(device_id,dname,model,ip,tname,uname,ip_id)
+        device_key = dname + "-" + model + "-" + uname
+        database.update_device(device_id,dname,model,ip,tname,uname,ip_id,device_key)
         return "1"
     return "0"
 

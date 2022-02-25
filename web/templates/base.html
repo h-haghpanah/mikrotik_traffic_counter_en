@@ -56,15 +56,18 @@
                 <li> <a href="{{url_for('devices')}}">Devices</a> </li>
                 <li> <a href="{{url_for('destinations')}}">Destinations</a> </li>
                 <li> <a href="{{url_for('setting')}}">Settings</a> </li>
+                <li> <a href="{{url_for('about')}}">About</a> </li>
                 <li> <a href="{{url_for('logout')}}">Exit</a> </li>
                 {% endif %}
                 {% if session["role"] == "User" %}
                 <li> <a href="{{url_for('self_report')}}">Dashboard</a> </li>
+                <li> <a href="{{url_for('about')}}">About</a> </li>
                 <li> <a href="{{url_for('logout')}}">Exit</a> </li>
                 {% endif %}
                 {% if session["role"] == "Reporter" %}
                 <li> <a href="{{url_for('dashboard')}}">Dashboard</a> </li>
                 <li> <a href="{{url_for('reporting')}}">Report</a> </li>
+                <li> <a href="{{url_for('about')}}">About</a> </li>
                 <li> <a href="{{url_for('logout')}}">Exit</a> </li>
                 {% endif %}
             </ul>

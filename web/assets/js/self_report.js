@@ -12,10 +12,10 @@ $(document).ready(function(){
     $('#toggle').on('click', function() {
         $('#toggle').toggleClass("btn-dark btn-secondary")
         var temp = $('#toggle').html()
-        if (temp == "پنهان کردن"){
-            $('#toggle').html("گزارش مصرف");
+        if (temp == "Hide"){
+            $('#toggle').html("Change Date Range");
         }else{
-        $('#toggle').html("پنهان کردن")
+        $('#toggle').html("Hide")
         }
         show.fadeToggle();  
     });
@@ -50,9 +50,9 @@ $(document).ready(function(){
         var allData = $("#report").serialize()
         var allData2 = $("#report").serializeArray()
         if (event == "no_event"){
-            pdate1="this_month"
-            pdate2="this_month"
-            allData = "pdate1="+pdate1+"&pdate2="+pdate2+"&id=all"
+            date1="this_month"
+            date2="this_month"
+            allData = "date1="+date1+"&date2="+date2+"&id=all"
 
 
         }
@@ -64,12 +64,15 @@ $(document).ready(function(){
             event.preventDefault()
         }
         if(event == "no_event"){
-            $("#title1").html("").append("  مصرف اینترنت  در ماه جاری&nbsp;  <span class='small'>(دانلود  /  آپلود) گیگابایت</span>")
+            $("#title1").html("").append("  Traffic usage in current month&nbsp;  <span class='small'>(Gigabyte)</span>")
+        }
+        else if(allData2[0].value == "" || allData2[1].value == ""){
+            alert("Not valid date.")
         }
         else if(allData2[0].value  ==  allData2[1].value){
-            $("#title1").html("").append("  مصرف اینترنت  در تاریخ&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+            $("#title1").html("").append("Traffic usage in&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(Gigabyte)</span>')
         }else{
-            $("#title1").html("").append("مصرف اینترنت  از تاریخ&nbsp; " + allData2[0].value + ' تا تاریخ '+ allData2[1].value +' &nbsp; <span class="small">(دانلود  /  آپلود) گیگابایت</span>')
+            $("#title1").html("").append("Traffic usage from&nbsp; " + allData2[0].value + ' to '+ allData2[1].value +' &nbsp; <span class="small">(Gigabyte)</span>')
         }
         $.ajax({
             url:"/read_users_full_report",
@@ -127,7 +130,7 @@ $(document).ready(function(){
                     $(".report_table").html("").append(content4)
                     
                 }
-                $("table .table-header").html("<th>نام کاربر</th>\n<th>نام دستگاه</th>\n<th>مقصد</th>\n<th>ترافیک (دانلود / آپلود)</th>\n<th>مجموع دانلود و آپلود</th>\n<th>کل ترافیک</th>")//.append(no_content)
+                $("table .table-header").html("<th>Name</th>\n<th>Device</th>\n<th>Destination</th>\n<th>Traffic (Download/Upload)</th>\n<th>Sum</th>\n<th>Total Traffic</th>")//.append(no_content)
             }  
   
         })

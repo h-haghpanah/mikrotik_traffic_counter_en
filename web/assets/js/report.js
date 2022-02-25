@@ -51,7 +51,10 @@ $(document).ready(function(){
 
     function read_report_table(event,allData,allData2) {
         event.preventDefault()
-        if(allData2[0].value  ==  allData2[1].value){
+        if(allData2[0].value == "" || allData2[1].value == ""){
+            alert("Not valid date.")
+        }
+        else if(allData2[0].value  ==  allData2[1].value){
             $("#title1").html("").append("Traffic usage in&nbsp;" + allData2[0].value + ' &nbsp; <span class="small">(Gigabyte)</span>')
         }else{
             $("#title1").html("").append("Traffic usage from&nbsp; " + allData2[0].value + ' to '+ allData2[1].value +' &nbsp; <span class="small">(Gigabyte)</span>')

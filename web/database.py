@@ -1,4 +1,5 @@
 import hashlib
+from operator import mod
 from persiantools.jdatetime import JalaliDate
 from flask import session
 import mysql.connector
@@ -46,7 +47,7 @@ def update_user(id,fname,lname,uname,gname,password,email,role):
         mycursor.execute("UPDATE users SET first_name = '" + fname + "', last_name = '" + lname + "', email = '" + email + "', user_name = '" + uname + "', user_password = '" + password + "', group_id = '" + gname + "', role_id = '" + role + "' WHERE user_id = " + id)
     return "1"
 
-def update_device(device_id,dname,model,ip,tname,uname,ip_id):
+def update_device(device_id,dname,model,ip,tname,uname,ip_id,device_key):
     mydb = mysql.connector.connect(
         host=sqlhost,
         user=sqluser,
@@ -56,9 +57,7 @@ def update_device(device_id,dname,model,ip,tname,uname,ip_id):
         autocommit=True
     )
     mycursor = mydb.cursor(dictionary=True)
-
-    mycursor.execute("UPDATE devices SET device_name = '" + dname + "', model = '" + model + "', type_id = '" + tname + "', user_id = '" + uname + "' WHERE device_id = " + device_id)
-    # if 
+    mycursor.execute("UPDATE devices SET device_name = '" + dname + "', model = '" + model + "', type_id = '" + tname + "', user_id = '" + uname + "', device_key = '" + device_key + "' WHERE device_id = " + device_id)
     mycursor.execute("UPDATE ip SET ip_value = '" + ip + "' WHERE ip_id = " + str(ip_id[0]))
     return "1"
 
@@ -297,3 +296,4 @@ def add_address(address,address_regex,destination):
     sql = "INSERT destination_address (destination_address,destination_address_regex,destination_id,destination_key) VALUES (%s, %s, %s, %s)"
     val = (address,address_regex,destination,destination_key)
     mycursor.execute(sql,val)
+
