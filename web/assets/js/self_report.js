@@ -154,8 +154,7 @@ $(document).ready(function(){
                     series: usage,
                     chart: {
                     type: 'pie',
-                    height: 350,
-                    fontFamily: 'shabnam'
+                    height: 350
                 },
                 fill: {
                     colors: colors
@@ -203,8 +202,7 @@ $(document).ready(function(){
                 series: usage,
                 chart: {
                 type: 'pie',
-                height: 350,
-                fontFamily: 'shabnam'
+                height: 350
             },
             labels: names,
             responsive: [{
