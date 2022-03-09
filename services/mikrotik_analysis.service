@@ -8,6 +8,8 @@ Group=root
 WorkingDirectory=/etc/mikrotik_traffic_counter_en/analysis
 Environment="/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin"
 ExecStart=/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin/python3 analysis.py
+Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target

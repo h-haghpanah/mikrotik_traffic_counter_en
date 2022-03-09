@@ -8,6 +8,8 @@ Group=root
 WorkingDirectory=/etc/mikrotik_traffic_counter_en/web
 Environment="/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin"
 ExecStart=/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin/uwsgi --socket 0.0.0.0:80 --protocol=http -w wsgi:app
+Restart=on-failure
+RestartSec=10
 
 [Install]
 WantedBy=multi-user.target
