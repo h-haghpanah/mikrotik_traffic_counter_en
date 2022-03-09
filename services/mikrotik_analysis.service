@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve mikrotik analysis
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/etc/mikrotik_traffic_counter_en/analysis
+Environment="/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin"
+ExecStart=/etc/mikrotik_traffic_counter_en/mikrotik_venv/bin/python3 analysis.py
+
+[Install]
+WantedBy=multi-user.target

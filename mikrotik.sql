@@ -160,6 +160,35 @@ INSERT INTO `ip` VALUES (20,'NONE',40);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `local_range`
+--
+
+DROP TABLE IF EXISTS `local_range`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `local_range` (
+  `local_range_name` varchar(50) NOT NULL,
+  `local_range_address` varchar(20) NOT NULL,
+  `local_range_regex` varchar(200) NOT NULL,
+  `mikrotik_id` int NOT NULL,
+  `local_range_id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`local_range_id`),
+  KEY `local_range___fk_local` (`mikrotik_id`),
+  CONSTRAINT `local_range___fk_local` FOREIGN KEY (`mikrotik_id`) REFERENCES `mikrotiks` (`mikrotik_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `local_range`
+--
+
+LOCK TABLES `local_range` WRITE;
+/*!40000 ALTER TABLE `local_range` DISABLE KEYS */;
+INSERT INTO `local_range` VALUES ('Floor-0','172.16.0.0/24','172\\.16\\.0\\.[0-9]{1,3}',1,1),('Floor-1','172.16.1.0/24','172\\.16\\.1\\.[0-9]{1,3}',1,2),('Floor-2','172.16.2.0/24','172\\.16\\.2\\.[0-9]{1,3}',1,3),('Floor-3','172.16.3.0/24','172\\.16\\.3\\.[0-9]{1,3}',1,4),('Floor-4','172.16.4.0/24','172\\.16\\.4\\.[0-9]{1,3}',1,5);
+/*!40000 ALTER TABLE `local_range` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `mikrotiks`
 --
 
@@ -241,6 +270,7 @@ CREATE TABLE `traffic` (
 
 LOCK TABLES `traffic` WRITE;
 /*!40000 ALTER TABLE `traffic` DISABLE KEYS */;
+INSERT INTO `traffic` VALUES (39.33,13.96,'2022-03-09',20,'2022-03-09-20-None',NULL);
 /*!40000 ALTER TABLE `traffic` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -347,4 +377,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09 17:10:26
+-- Dump completed on 2022-03-09 21:54:39

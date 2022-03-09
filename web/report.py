@@ -1,5 +1,5 @@
 import hashlib
-from django.db import DataError
+#from django.db import DataError
 # from os import PRIO_USER
 from persiantools.jdatetime import JalaliDate
 from flask import session
