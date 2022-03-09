@@ -369,7 +369,7 @@ $(document).ready(function(){
         event.preventDefault();
         Swal.fire({
             title: '<span class="shabnam rtl_class big-font">Are you sure ?</span>',
-            html: '<span " class="shabnam rtl_class">This action cannot be reverted and all user assined to this group will delete !!</span>',
+            html: '<span " class="shabnam rtl_class">This action cannot be reverted and all user assined to this group will deleted !!</span>',
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
