@@ -1,0 +1,11 @@
+1- sudo yum install git -y
+2- sudo git clone https://github.com/h-haghpanah/mikrotik_traffic_counter_en /etc/mikrotik_traffic_counter_en
+3- cd /etc/mikrotik_traffic_counter_en/installation
+4- sudo .1-install_system_requirement.sh
+5- sudo .2-install_mysql.sh
+6- grep ‘temporary password’ /var/log/mysqld.log
+7- mysql_secure_installation
+8- Create Mikrotik Database
+9- mysql -u root -p mikrotik < ../mikrotik.sql
+10- python3 -m venv /etc/mikrotik_traffic_counter_en/mikrotik_venv
+11- sudo .3-install_python_requirement.sh
