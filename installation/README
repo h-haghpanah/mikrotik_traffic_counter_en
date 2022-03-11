@@ -5,10 +5,10 @@ cd /etc/mikrotik_traffic_counter_en/installation
 sudo chmod +x /etc/mikrotik_traffic_counter_en/installation/*
 sudo ./1-install_system_requirement.sh
 sudo ./2-install_mysql.sh
-grep ‘temporary password’ /var/log/mysqld.log
+grep temporary\ password /var/log/mysqld.log
 sudo mysql_secure_installation
 mysql -u root -p
 CREATE DATABASE mikrotik;
 exit
-mysql -u root -p mikrotik < ../mikrotik.sql
+mysql -u root -p mikrotik < /etc/mikrotik_traffic_counter_en/mikrotik.sql
 sudo ./3-install_python_requirement.sh
