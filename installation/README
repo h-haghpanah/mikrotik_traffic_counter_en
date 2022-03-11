@@ -6,8 +6,9 @@ sudo chmod +x *
 sudo ./1-install_system_requirement.sh
 sudo ./2-install_mysql.sh
 grep ‘temporary password’ /var/log/mysqld.log
-mysql_secure_installation
-Create Mikrotik Database
+sudo mysql_secure_installation
+mysql -u root -p
+CREATE DATABASE mikrotik;
+exit
 mysql -u root -p mikrotik < ../mikrotik.sql
-python3 -m venv /etc/mikrotik_traffic_counter_en/mikrotik_venv
 sudo ./3-install_python_requirement.sh
