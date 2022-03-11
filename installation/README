@@ -2,7 +2,7 @@ sudo yum install git -y
 sudo mkdir /etc/mikrotik_traffic_counter_en
 sudo git clone https://github.com/h-haghpanah/mikrotik_traffic_counter_en /etc/mikrotik_traffic_counter_en
 cd /etc/mikrotik_traffic_counter_en/installation
-sudo chmod +x *
+sudo chmod +x /etc/mikrotik_traffic_counter_en/installation/*
 sudo ./1-install_system_requirement.sh
 sudo ./2-install_mysql.sh
 grep ‘temporary password’ /var/log/mysqld.log
