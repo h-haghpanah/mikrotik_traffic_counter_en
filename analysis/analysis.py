@@ -6,8 +6,8 @@ import database
 import database2
 import time
 import datetime
-import sys
-import websites
+# import sys
+# import websites
 #----------------------------------------------------------------------------#
 #                                Functions                                   #
 #----------------------------------------------------------------------------#
@@ -35,9 +35,9 @@ def ignorelocals(html):  #Ignore Local Traffic
     return html
 
 def trafficCounter(html, user):   #Count Traffic For Users
-    maxrows = 2560
-    temp2Upload = 0
-    temp2Download = 0
+    # maxrows = 2560
+    # temp2Upload = 0
+    # temp2Download = 0
     date = str(datetime.datetime.today().strftime("%Y-%m-%d"))
     user_key = str(user["user_name"]) + "-" + str(user["device_id"]) + "-" + str(user["ip_id"])
     traffic = {}

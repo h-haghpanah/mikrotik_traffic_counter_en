@@ -1,26 +1,33 @@
 import hashlib
 from operator import mod
-from persiantools.jdatetime import JalaliDate
-from flask import session
+# from persiantools.jdatetime import JalaliDate
+# from flask import session
 import mysql.connector
-import re
-from datetime import date
-import gc
-import report
-import configparser
+# import re
+# from datetime import date
+# import gc
+# import report
 import os
 
-dirname = os.path.dirname(__file__)
-config = configparser.RawConfigParser()
-config_path = os.path.join(dirname,"../config.ini")
-config.read(config_path)
+if os.getenv('INDOCKER', 'False'):
+    sqlhost = os.getenv('SQLHOST', 'database')
+    sqluser = os.getenv('SQLUSER', 'root')
+    sqlpasswd = os.getenv('SQLPASSWD', 'secret')
+    sqldatabase = os.getenv('SQLDATABASE', 'mikrotik')
+    sqlaut = os.getenv('SQLAUT', 'mysql_native_password')
+else:
+    import configparser
+    dirname = os.path.dirname(__file__)
+    config = configparser.RawConfigParser()
+    config_path = os.path.join(dirname,"../config.ini")
+    config.read(config_path)
+    sqlhost = config.get("MySQL_Config","sqlhost")
+    sqluser = config.get("MySQL_Config","sqluser")
+    sqlpasswd= config.get("MySQL_Config","sqlpasswd")
+    sqldatabase = config.get("MySQL_Config","sqldatabase")
+    sqlaut = config.get("MySQL_Config","sqlaut")
 
 
-sqlhost = config.get("MySQL_Config","sqlhost")
-sqluser = config.get("MySQL_Config","sqluser")
-sqlpasswd= config.get("MySQL_Config","sqlpasswd")
-sqldatabase = config.get("MySQL_Config","sqldatabase")
-sqlaut = config.get("MySQL_Config","sqlaut")
 
 
 def hashing(password):

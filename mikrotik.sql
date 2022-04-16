@@ -140,7 +140,7 @@ DROP TABLE IF EXISTS `ip`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ip` (
   `ip_id` int NOT NULL AUTO_INCREMENT,
-  `ip_value` varchar(12) NOT NULL,
+  `ip_value` varchar(15) NOT NULL,
   `device_id` int NOT NULL,
   PRIMARY KEY (`ip_id`),
   UNIQUE KEY `ip_ip_value_uindex` (`ip_value`),

@@ -1,0 +1,21 @@
+FROM python:3.6-alpine
+
+RUN apk add --no-cache gcc musl-dev linux-headers
+
+WORKDIR /etc/mikrotik_traffic_counter_en/
+
+COPY requirements-frontend.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY config.ini .
+
+COPY web web
+
+EXPOSE 80
+
+WORKDIR /etc/mikrotik_traffic_counter_en/web
+
+ENV INDOCKER Yes
+
+CMD ["uwsgi", "--socket", "0.0.0.0:80", "--protocol=http", "-w", "wsgi:app"]

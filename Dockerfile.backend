@@ -1,0 +1,17 @@
+FROM python:3.6-alpine
+
+WORKDIR /etc/mikrotik_traffic_counter_en/
+
+COPY requirements-backend.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY config.ini .
+
+COPY analysis analysis
+
+WORKDIR /etc/mikrotik_traffic_counter_en/analysis
+
+ENV INDOCKER Yes
+
+CMD ["python3", "-u", "analysis.py"]
