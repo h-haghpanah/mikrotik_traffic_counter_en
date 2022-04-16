@@ -37,6 +37,8 @@ Also set your `MYSQL_ROOT_USER`, `MYSQL_ROOT_PASSWORD`.
 
 ### Running
 
+Finally, run with docker-compose
+
 ```
 docker-compose up --build -d
 ``` 
