@@ -1,27 +1,33 @@
-import hashlib
-#from django.db import DataError
+# import hashlib
+# from django.db import DataError
 # from os import PRIO_USER
-from persiantools.jdatetime import JalaliDate
-from flask import session
+# from persiantools.jdatetime import JalaliDate
+# from flask import session
 import mysql.connector
-import re
-from datetime import date
-import gc
-from tools import jalali_to_gregorian,gregorian_to_jalali
-import configparser
+# import re
+# from datetime import date
+# import gc
+# from tools import jalali_to_gregorian,gregorian_to_jalali
 import os
 
-dirname = os.path.dirname(__file__)
-config = configparser.RawConfigParser()
-config_path = os.path.join(dirname,"../config.ini")
-config.read(config_path)
 
-
-sqlhost = config.get("MySQL_Config","sqlhost")
-sqluser = config.get("MySQL_Config","sqluser")
-sqlpasswd= config.get("MySQL_Config","sqlpasswd")
-sqldatabase = config.get("MySQL_Config","sqldatabase")
-sqlaut = config.get("MySQL_Config","sqlaut")
+if os.getenv('INDOCKER', 'False'):
+    sqlhost = os.getenv('SQLHOST', 'database')
+    sqluser = os.getenv('SQLUSER', 'root')
+    sqlpasswd = os.getenv('SQLPASSWD', 'secret')
+    sqldatabase = os.getenv('SQLDATABASE', 'mikrotik')
+    sqlaut = os.getenv('SQLAUT', 'mysql_native_password')
+else:
+    import configparser
+    dirname = os.path.dirname(__file__)
+    config = configparser.RawConfigParser()
+    config_path = os.path.join(dirname,"../config.ini")
+    config.read(config_path)
+    sqlhost = config.get("MySQL_Config","sqlhost")
+    sqluser = config.get("MySQL_Config","sqluser")
+    sqlpasswd= config.get("MySQL_Config","sqlpasswd")
+    sqldatabase = config.get("MySQL_Config","sqldatabase")
+    sqlaut = config.get("MySQL_Config","sqlaut")
 
 
 

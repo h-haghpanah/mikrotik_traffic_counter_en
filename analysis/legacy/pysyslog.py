@@ -6,7 +6,7 @@ HOST, PORT = "0.0.0.0", 514
 
 import logging
 import socketserver
-import time
+#import time
 
 logging.basicConfig(level=logging.INFO, format='%(message)s', datefmt='', filename=LOG_FILE, filemode='a')
 
