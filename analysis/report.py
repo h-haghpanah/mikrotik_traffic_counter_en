@@ -1,7 +1,7 @@
 import mysql.connector
-# import re
-# from datetime import date
-# import config
+import re
+from datetime import date
+import config
 import database
 ###-------------------------- Connect To Database --------------------------###
 mydb = mysql.connector.connect(

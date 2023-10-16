@@ -2,8 +2,8 @@ import hashlib
 from persiantools.jdatetime import JalaliDate
 from flask import session
 import mysql.connector
-# import re
-# from datetime import date
+import re
+from datetime import date
 import gc
 import configparser
 import os
