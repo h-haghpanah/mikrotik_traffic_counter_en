@@ -84,7 +84,3 @@ mysql -u root -p mikrotik < /etc/mikrotik_traffic_counter_en/mikrotik.sql
 ```bash
 sudo ./3-install_python_requirement.sh
 ```
-
-## Configuration
-
-After completing the installation, you may need to configure the "mikrotik_traffic_counter_en" project as per your specific requirements. Refer to the project's documentation for further details on configuring and using the software.
