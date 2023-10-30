@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 8.0.28, for Linux (aarch64)
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
 -- Host: localhost    Database: mikrotik
 -- ------------------------------------------------------
--- Server version	8.0.28-0ubuntu0.20.04.3
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -140,7 +140,7 @@ DROP TABLE IF EXISTS `ip`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `ip` (
   `ip_id` int NOT NULL AUTO_INCREMENT,
-  `ip_value` varchar(12) NOT NULL,
+  `ip_value` varchar(255) NOT NULL,
   `device_id` int NOT NULL,
   PRIMARY KEY (`ip_id`),
   UNIQUE KEY `ip_ip_value_uindex` (`ip_value`),
@@ -377,4 +377,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-03-09 21:54:39
+-- Dump completed on 2023-10-30 14:00:08
